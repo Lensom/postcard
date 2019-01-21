@@ -1,0 +1,287 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+// Ссылки
+a.common
+	font-family: Rubik
+	font-style: normal
+	font-weight: normal
+	line-height: 26px
+	font-size: 20px
+	color: #A163F5
+	position: relative
+	&:hover
+		color: #A163F5
+		text-decoration: none
+		border-bottom: 2px dashed #A163F5
+a.common.show-more
+	&:before
+		content: ''
+		background-image: url(../img/refresh-icon.svg)
+		width: 18px
+		height: 18px
+		position: absolute
+		left: -35px
+		top: 5px
+a.edit 
+	&:before
+		content: ''
+		background-image: url(../img/edit-icon.svg)
+		width: 16px
+		height: 17px
+		position: absolute
+		left: -32px
+		top: 4px
+
+//Кнопки
+
+.btn
+	color: #FFF
+	font-family: 'Rubik', sans-serif
+	font-style: normal
+	font-weight: 500
+	line-height: 18px
+	font-size: 14px
+	text-align: center
+	text-transform: uppercase
+	cursor: pointer
+	&:hover
+		text-decoration: none
+		color: #fff
+.btn-submit
+	line-height: 26px
+	font-size: 20px
+	background: linear-gradient(99.93deg, #A163F5 0%, #ED74A9 100%)
+	box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
+	border-radius: 7px
+	padding: 22px 51px
+	&:hover
+		background: linear-gradient(99.93deg, #8F51E2 0%, #DE5C95 100%)
+		box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
+		border-radius: 7px
+.non-active
+	opacity: 0.6
+
+.btn-allow
+	margin-left: 40px
+	font-size: 14px
+	line-height: 18px
+	background: linear-gradient(102.94deg, #F37890 0%, #ED74A9 100%)
+	border-radius: 3px
+	padding: 8px 26px 7px 26px
+	box-shadow: 0px 20px 25px -10px linear-gradient(#F37890 0%, #ED74A9 100%)
+	&:before
+		box-shadow: 0 0 5.28vw 0 rgba(255,218,231,.62), 0 3.7vw 11.09vw 0 #ff0037, inset 0 0 2.64vw 0 rgba(255,124,146,.74)
+	&:after
+		box-shadow: 0 0 2.4vw 0 rgba(255,218,231,.62), 0 1.68vw 5.04vw 0 #ff0037, inset 0 0 1.2vw 0 rgba(255,124,146,.74)
+	&:hover
+		background: linear-gradient(102.94deg, #EA6C85 0%, #E26199 100%)
+		box-shadow: 0px 4px 4px rgba(255, 240, 225, 0.2)
+		border-radius: 3px
+		
+// Вкладки
+
+.tab
+	font-family: Rubik
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	text-align: center
+	border-radius: 6px
+	max-width: 145px
+	display: inline-block
+	padding: 6px 18px
+	&:hover
+		text-decoration: none
+		color: #fff
+	&:focus
+		text-decoration: none
+.tab-active	
+	background: #ED74A9
+	box-shadow: 0px 4px 4px #E097B7
+	color: #FFFFFF
+	&:hover
+		background-color: #A163F5
+		box-shadow: 0px 4px 4px #A163F5	
+.tab-non-active
+	color: #DAA0BA
+	background: #F9D5E1
+	box-shadow: 0px 4px 4px rgba(218, 160, 186, 0.5)
+	&:hover
+		color: #DAA0BA
+
+// Выбор элемента
+.elements
+	display: flex
+	margin: 25px
+	.element
+		box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+		background: #FFFCF8
+		border-radius: 6px
+		width: 97px
+		height: 97px
+		text-align: center
+		display: flex
+		justify-content: center
+		flex-direction: column  	
+	.element-active
+		border: 3px solid rgba(255, 162, 179, 0.5)
+
+// Соц. сети
+.social-network
+	display: flex
+	.social-element
+		width: 40px
+		height: 40px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		background: #ED74A9		
+		border-radius: 6px
+		&:hover
+			box-shadow: 0px 4px 4px #E097B7
+
+// Цвета
+.color-edit
+	display: flex
+	span
+		font-family: Rubik
+		font-style: normal
+		font-weight: normal
+		line-height: 23px
+		font-size: 18px
+		color: #ED74A9
+	.colors
+		display: flex
+		.color
+			margin-left: 7px
+			width: 21px
+			height: 21px
+			background-color: red
+			border: 2px solid #FFFCF8
+			border-radius: 3px
+			box-shadow: 0px 2px 2px rgba(208, 183, 156, 0.64)
+			&:first-child
+				margin-left: 11px
+		.active
+			box-shadow: 0px 2px 2px rgba(237, 116, 169, 0.5)
+		.gray
+			background: #4B4B4B
+		.green
+			background: #136464
+		.violet
+			background: #564B64
+		.red
+			background: #6B163C
+
+// Формы, инпуты
+
+.text-wrapper
+	position: relative
+	max-width: 526px
+	.counter
+		position: absolute
+		bottom: 15px
+		right: 10px
+		line-height: 16px
+		font-size: 12px
+		color: #FFA2B3
+
+	textarea
+		min-height: 97px
+		min-width: 100%
+		max-width: 526px
+		background: #FFFCF8
+		border: 3px solid #FFFCF8
+		box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+		border-radius: 6px
+		outline: none
+		padding: 10px 19px
+		line-height: 21px
+		font-size: 16px
+		color: #4B4B4B
+		resize: none
+		&:focus
+			outline: none
+			background: #FFFCF8
+			border: 3px solid rgba(255, 162, 179, 0.5)
+
+::placeholder
+	font-family: Rubik
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	color: #D0B79C
+
+
+
+body 
+	background-color: #333
+
+// Мусор
+
+.mr-1
+	margin-left: 100px !important
+
+.btns 
+	margin: 25px
+
+@import "media" // Всегда в конце
