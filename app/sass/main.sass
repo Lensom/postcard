@@ -59,6 +59,7 @@ body
 
 // Ссылки
 a.common
+	display: block
 	font-family: Rubik
 	font-style: normal
 	font-weight: normal
@@ -66,6 +67,7 @@ a.common
 	font-size: 20px
 	color: #A163F5
 	position: relative
+	border-bottom: 2px dashed transparent
 	&:hover
 		color: #A163F5
 		text-decoration: none
@@ -111,6 +113,35 @@ a.edit
 	box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
 	border-radius: 7px
 	padding: 22px 51px
+	position: relative
+	color: #fff
+	&:after
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 1
+		-webkit-transition: opacity .3s ease-out
+		-o-transition: opacity .3s ease-out
+		transition: opacity .3s ease-out
+		// box-shadow: 0 1.64vw 2.63vw 0 rgba(237, 116, 169, 0.8), inset 0 0 1.1vw 0 rgba(237, 116, 169, 0.8)
+		box-shadow: 0 1.64vw 2.63vw 0 rgba(161, 99, 245, 0.8)
+		border-radius: 6px
+		content: ""
+	&:before
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 1
+		-webkit-transition: opacity .3s ease-out
+		-o-transition: opacity .3s ease-out
+		transition: opacity .3s ease-out
+		box-shadow: -1 .64vw 2.63vw 0 rgba(237, 116, 169, 0.8)
+		border-radius: 6px
+		content: ""
 	&:hover
 		background: linear-gradient(99.93deg, #8F51E2 0%, #DE5C95 100%)
 		box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
@@ -271,17 +302,368 @@ a.edit
 	font-size: 18px
 	color: #D0B79C
 
+input
+	font-family: Rubik
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	background: #FFFCF8
+	box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+	border-radius: 6px
+	outline: none
+	color: #D0B79C
+	padding: 13px 101px 7px 43px
+	height: 44px
+	position: relative
+	max-width: 252px
+	&:focus
+		box-shadow: 0px 4px 4px rgba(237, 116, 169, 0.5)
+input.email
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 19px
+		height: 14px
+		background-image: url(../img/email-icon.svg)	
+		z-index: 9999
+input.error
+	background: #FFD5D5
+	box-shadow: 0px 4px 4px rgba(255, 80, 103, 0.69)
+
+.wrapper
+	width: 1230px
+	margin: 0 auto
+
+// 1 страница
+
+.greeting
+	background-image: url(../img/back-first-page.jpg)
+	background-size: cover
+	.sides
+		display: flex
+		background-image: url(../img/wall1.png)
+		background-repeat: no-repeat
+		background-size: cover
+		background-size: 58%
+		background-position: -1% 11%
+		.left-side
+			width: 693px
+			.show-more
+				position: absolute
+				bottom: 19.54%
+				left: 30%
+			.slots
+				height: 100vh
+				position: relative
+				.slot
+					width: 0
+					height: 0	
+					position: absolute
+					transition-property: top, left
+					transition-duration: .5s
+					.decor
+						bottom: 20%
+						left: 23%
+				.slot-1
+					top: 36%
+					left: 79.2%
+					opacity: 1		
+				.slot-2
+					top: 25.7%
+					left: 44%
+				.slot-3
+					top: 49.6%
+					left: 90.2%
+				.slot-4
+					top: 55.2%
+					left: 37.8%
+				.slot-5
+					top: 42%
+					left: 57.5%
+				.slot-6
+					top: 38.4%
+					left: 31.5%
+				.slot-7
+					top: 15.3%
+					left: 51.5%
+				.slot-8
+					top: 23.3%
+					left: 86.6%
+				.slot-9
+					top: 56.3%
+					left: 66%
+				.slot-10
+					top: 64.3%
+					left: 81%
+				.slot-11
+					top: 16.5%
+					left: 101.4%
+				.slot-12
+					top: 48%
+					left: 119.7%			
+				.slot-13
+					top: 38.7%
+					left: 110%		
+				.slot-14
+					top: 60.4%
+					left: 98.3%
+				.slot-15
+					top: 23.8%
+					left: 19.5%
+				.slot-16
+					top: 35.4%
+					left: 10%
+				.slot-17
+					top: 64.5%
+					left: 56%
+				.slot-18
+					top: 28.5%
+					left: 105.7%
+				.slot-19
+					top: 64.5%
+					left: 16.4%
+				.slot-20
+					top: 70.3%
+					left: 65.4%
+				.slot-21	
+					top: 69.4%
+					left: 108.7%
+				.slot-22
+					top: 12.7%
+					left: 23.3%
+				.slot-23
+					top: 7.2%
+					left: 44.7%
+				.slot-24
+					top: 8%
+					left: 99.4%
+				.slot-25
+					top: 33.6%
+					left: 125%
+				.slot-26
+					top: 22.5%
+					left: 114%
+				.slot-27
+					top: 71.2%
+					left: 38.4%
+				.slot-28
+					top: 13%
+					left:	78.6%
+				.slot-29
+					top: 54.7%
+					left: 9%
 
 
-body 
-	background-color: #333
+		.right-side
+			margin: 73px 28px 0 0
+			position: relative
+			a.logotype 
+				display: block
+				text-align: right
+			.text-block
+				margin: 112px 0 0 244px
+			h1
+				font-family: Rubik
+				font-style: normal
+				font-weight: 500
+				line-height: 36px
+				font-size: 28px
+				text-align: center
+				color: #EC4790
+			h2
+				font-family: Rubik
+				font-style: normal
+				font-weight: normal
+				line-height: 26px
+				font-size: 20px
+				text-align: center
+				color: #222222
+				margin-top: 34px
+				margin-bottom: 56px
+			.btn.btn-submit
+				display: inline-block
+				margin-left: 80px
+				padding: 22px 30px
+				animation-name: one
+				animation-duration: 1s
+				animation-iteration-count: infinite
+				animation-delay: 1s
+				animation-direction: alternate
+				color: #fff
+				border: none
+			.rules
+				text-align: right
+				margin-top: 164px
+				.common
+					display: inline-block
+					border-bottom: 2px dashed transparent
+					&:hover
+						text-decoration: none
+						border-bottom: 2px dashed #A163F5
 
-// Мусор
+@keyframes one
+	0%
+	 transform: scale(1)
+	100%
+		transform: scale(1.1)
+  
 
-.mr-1
-	margin-left: 100px !important
+.card-v
+	text-align: center
+	width: 500px
+	height: 500px
+	color: #4B4B4B
+	padding: 20px 39px
+	background-size: cover
+	transform-origin: left top 
+	cursor: pointer
+	position: relative
+	transition: transform .5s ease-in
+	filter: drop-shadow(-20px 20px 25px rgba(158, 82, 90, 0.5))
+	
+	&:hover
+		z-index: 100 !important
+		opacity: 1 !important
+		filter: drop-shadow(-0px 0px 25px #FFFFFF)
+		transform: scale(.6) translate(-50%, -50%) !important 
+	p 
+		padding: 172px 57px  
+		font-family: Raleway, font-serif
+		font-style: italic
+		font-weight: normal
+		line-height: 15px
+		font-size: 12px
+		text-align: center
+	.decor
+		width: 85px
+		height: 90px
+		z-index: 10
+		background-size: cover
+		position: absolute
 
-.btns 
-	margin: 25px
+.bgc1
+	background-image: url(../img/bgc/cardheart.png)
+.bgc2
+	background-image: url(../img/bgc/e-round.png)
+.bgc3
+	background-image: url(../img/bgc/frame.png)
+.bgc4
+	background-image: url(../img/bgc/greenround.png)
+.bgc5
+	background-image: url(../img/bgc/pinkround.png)
+.bgc6
+	background-image: url(../img/bgc/pixelheart.png)
+.decor-1
+	background-image: url(../img/decor/decor1_big.png)
+.decor-2
+	background-image: url(../img/decor/decor2_big.png)
+.decor-3
+	background-image: url(../img/decor/decor3_big.png)
+.decor-4
+	background-image: url(../img/decor/decor4_big.png)
+.decor-5
+	background-image: url(../img/decor/decor5_big.png)
+.decor-6
+	background-image: url(../img/decor/decor6_big.png)
+.decor-7
+	background-image: url(../img/decor/decor7_big.png)
+
+.slot-xxl
+	z-index: 6
+	.card-v
+		transform: scale(.5) translate(-50%, -50%)
+
+.slot-xl
+	.card-v
+		z-index: 5
+		transform: scale(.45) translate(-50%, -50%)
+		opacity: 1
+
+.slot-l
+	.card-v
+		z-index: 4
+		transform: scale(.35) translate(-50%, -50%)
+		opacity: .8
+
+.slot-m
+	.card-v
+		z-index: 3
+		transform: scale(.3) translate(-50%, -50%)
+		opacity: .6
+
+.slot-s
+	.card-v
+		z-index: 2
+		transform: scale(.24) translate(-50%, -50%)
+		opacity: .4
+		
+.slot-xs
+	.card-v
+		z-index: 1
+		transform: scale(.2) translate(-50%, -50%)
+		opacity: .3
+	 
+.slot-xxs
+	.card-v
+		z-index: 0
+		transform: scale(.15) translate(-50%, -50%)
+		opacity: .3
+
+.slot
+	.decor
+    transform: scale(2)
+
+.active
+	top: 44% !important
+	left: 66% !important
+	z-index: 111 !important
+	.card-v
+		transform: scale(1) translate(-50%, -50%) !important
+		opacity: 1 !important
+
+.modal-dialog
+	max-width: 900px
+.modal-open
+	.modal
+		background: rgba(0, 0, 0, 0.8)
+.modal-content
+	padding: 60px 55px
+	background: #fff
+	border-radius: 10px
+.modal-header
+	border-bottom: none
+	position: absolute
+	top: 6px
+	right: 16px
+	span 
+		font-family: Rubik, sans-serif
+		font-weight: 900
+		line-height: 27px
+		font-size: 20px
+		color: #EC4790
+.modal-body
+	padding: 0
+	h3
+		font-family: Roboto
+		font-style: normal
+		font-weight: bold
+		line-height: 26px
+		font-size: 20px
+		color: #4B4B4B
+		margin-bottom: 25px
+	h4
+		font-family: Roboto, sans-serif
+		line-height: 26px
+		font-size: 20px
+		margin: 30px 0 26px
+	p
+		font-family: Roboto
+		font-size: 20px
+		line-height: 26px
+		padding-bottom: 18px
+
 
 @import "media" // Всегда в конце

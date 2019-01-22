@@ -3,13 +3,41 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1300px)
+	.wrapper
+		width: 962px
+	.greeting
+		.sides
+			.right-side
+				margin: 73px 0 0 0
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.wrapper
+		width: 100%
+		padding: 0 30px
+	.greeting
+		.sides
+			flex-direction: column
+			.right-side
+				margin-top: 50px
+				order: 0
+				h1 
+					margin-top: 70px
+				.rules
+					margin: 30px 0
+					text-align: center
+				.btn.btn-submit
+					margin-left: 0
+				.text-block
+					text-align: center
+					margin: 0
+			.left-side
+				order: 1
+
+			
+
 
 
 /* Small Devices, Tablets */
@@ -25,31 +53,3 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
-

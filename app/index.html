@@ -1,85 +1,413 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-
-	<meta charset="utf-8">
-
-	<title>Title</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-
-	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#000">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#000">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-	<link rel="stylesheet" href="css/main.min.css">
-
-</head>
-
-<body>
-
-	<div class="btns">
-			<a class="btn btn-submit">Отправить</a>
-			<a class="btn btn-submit non-active">Отправить</a>
-			<a class="btn btn-allow">Применить</a>
-	</div>
-
-	<div class="btns">
-		<a href="#" class="tab tab-active">Выбрать форму</a>
-		<a href="#" class="tab tab-non-active">Выбрать форму</a>
-	</div>
-
-	<div class="elements">
-		<a href="#" class="element"><img src="img/heart.svg" alt=""></a>
-		<a href="#" class="element element-active"><img src="img/heart.svg" alt=""></a>
-	</div>
-
-	<div class="social-network">
-		<a href="#" target="_blank" class="social-element"><img src="img/facebook.svg" class="facebook" alt=""></a>
-		<a href="#" target="_blank" class="social-element"><img src="img/vk.svg" class="vk" alt=""></a>
-		<a href="#" target="_blank" class="social-element"><img src="img/odno.svg" class="odno" alt=""></a>
-		<a href="#" target="_blank" class="social-element"><img src="img/twitter.svg" class="twitter" alt=""></a>
-	</div>
-
-	<a href="#" class="common">Я БОЛЬШОЙ И ЗЛОЙ ССЫЛЬ</a>
-	<div class="btns mr-1">
-			<a href="#" class="common show-more">Показать ещё</a>
-			<a href="#" class="common edit">Редактировать</a>
-	</div>
-
-	<div class="color-edit btns">
-		<span>Цвет текста:</span>
-		<div class="colors">
-			<a href="#" class="color gray active" id="gray">
-			</a>
-			<a href="#" class="color green" id="green">
-			</a>
-			<a href="#" class="color violet" id="violet">
-			</a>
-			<a href="#" class="color red" id="red">
-			</a>
-		</div>
-	</div>
-
-	<div class="text-wrapper btns">
-			<textarea class="textarea" placeholder="Ваше послание..."></textarea>
-			<div class="counter">0</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="js/scripts.min.js"></script>
-
-</body>
+   <head>
+      <meta charset="utf-8">
+      <title>Title</title>
+      <meta name="description" content="">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta property="og:image" content="path/to/image.jpg">
+      <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+      <!-- Chrome, Firefox OS and Opera -->
+      <meta name="theme-color" content="#000">
+      <!-- Windows Phone -->
+      <meta name="msapplication-navbutton-color" content="#000">
+      <!-- iOS Safari -->
+      <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+      <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/main.min.css">
+   </head>
+   <body>
+      <div class="greeting">
+         <div class="wrapper">
+            <div class="sides">
+               <div class="left-side">
+                  <div class="slots">
+                     <div class="slot slot-1 slot-xxl">
+                        <div class="card-v bgc3">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-2 slot-xl">
+                        <div class="card-v bgc2">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-3 slot-xl">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-4 slot-xxl">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-5 slot-xl">
+                        <div class="card-v bgc1">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-6 slot-l">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-7 slot-l">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-8 slot-l">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-10 slot-m">
+                        <div class="card-v bgc1">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-9 slot-m">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-11 slot-m">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-13 slot-m">
+                        <div class="card-v bgc2">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-12 slot-m">
+                        <div class="card-v bgc3">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-14 slot-m">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-15 slot-m">
+                        <div class="card-v bgc1">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-28 slot-m">
+                        <div class="card-v bgc1">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-16 slot-s">
+                        <div class="card-v bgc3">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-17 slot-s">
+                        <div class="card-v bgc3">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-18 slot-s">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-19 slot-s">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-20 slot-xs">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-21 slot-xs">
+                        <div class="card-v bgc5">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-22 slot-xs">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-23 slot-xxs">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-24 slot-xxs">
+                        <div class="card-v bgc5">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-25 slot-xxs">
+                        <div class="card-v bgc4">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-26 slot-xxs">
+                        <div class="card-v bgc6">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-27 slot-xxs">
+                        <div class="card-v bgc1">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                     <div class="slot slot-29 slot-xxs">
+                        <div class="card-v bgc3">
+                           <p>Очень-очень-очень-очень-очень-очень
+                              длинный-длинный-длинный текст о
+                              неземной любви к кому-нибудь на 145
+                              символов максимум, но можно и меньше! <br>
+                              Аноним
+                           </p>
+                           <div class="decor decor-1"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <a href="#" class="common show-more">Показать ещё</a>
+               </div>
+               <div class="right-side">
+                  <a href="#" class="logotype">
+                  <img src="img/logotype.svg" alt="dostavka.by онлайн-гипермаркет">
+                  </a>
+                  <div class="text-block">
+                     <h1>Создай свою уникальную <br>валентинку и выиграй что-то <br>очень крутое!</h1>
+                     <h2>Еще какой-то дополнительный текст, который может быть в три строки.</h2>
+                     <a class="btn btn-submit">Создать валентинку</a>
+                     <div class="rules">
+                        <a href="#" data-toggle="modal" data-target="#rules" class="common">Правила</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade" id="rules" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">X</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <h3>ПРАВИЛА АКЦИИ</h3>
+                  <h3>«Создай свою валентинку»</h3>
+                  <p>Далее текст для примера.</p>
+                  <p>Настоящие Правила и условия рекламной акции (далее — Акция) составлены с учетом требований действующего законодательства Российской Федерации, в том числе Федерального закона от 13.03.2006 № 38-ФЗ «О рекламе».</p>
+									
+									<h4>1.ОБЩИЕ ПОЛОЖЕНИЯ</h4>
+                  <p>1.1. Организатором Акции является Go Travel Un Limited (Гоу Трэвел Ан Лимитед), гонконгская корпорация под номером 1658681, имеющая юридический адрес: Suite 1504, 15/F, Chinachem Tower, 34-37 Connaught Rd Central, Hong Kong, действующая под зарегистрированным товарным знаком Aviasales.</p>
+                  <p>1.2. Акция является мероприятием рекламного характера, направленным на стимулирование потребления услуг сайта aviasales.ru.</p>
+                  <p>1.3. Акция не является лотереей, тотализатором или иной основанной на риске азартной игрой.</p>
+									
+									<h4>1.ОБЩИЕ ПОЛОЖЕНИЯ</h4>
+                  <p>1.1. Организатором Акции является Go Travel Un Limited (Гоу Трэвел Ан Лимитед), гонконгская корпорация под номером 1658681, имеющая юридический адрес: Suite 1504, 15/F, Chinachem Tower, 34-37 Connaught Rd Central, Hong Kong, действующая под зарегистрированным товарным знаком Aviasales.</p>
+                  <p>1.2. Акция является мероприятием рекламного характера, направленным на стимулирование потребления услуг сайта aviasales.ru.</p>
+                  <p>1.3. Акция не является лотереей, тотализатором или иной основанной на риске азартной игрой.</p>
+									
+									<h4>1.ОБЩИЕ ПОЛОЖЕНИЯ</h4>
+                  <p>1.1. Организатором Акции является Go Travel Un Limited (Гоу Трэвел Ан Лимитед), гонконгская корпорация под номером 1658681, имеющая юридический адрес: Suite 1504, 15/F, Chinachem Tower, 34-37 Connaught Rd Central, Hong Kong, действующая под зарегистрированным товарным знаком Aviasales.</p>
+                  <p>1.2. Акция является мероприятием рекламного характера, направленным на стимулирование потребления услуг сайта aviasales.ru.</p>
+                  <p>1.3. Акция не является лотереей, тотализатором или иной основанной на риске азартной игрой.</p>
+									
+									<h4>1.ОБЩИЕ ПОЛОЖЕНИЯ</h4>
+                  <p>1.1. Организатором Акции является Go Travel Un Limited (Гоу Трэвел Ан Лимитед), гонконгская корпорация под номером 1658681, имеющая юридический адрес: Suite 1504, 15/F, Chinachem Tower, 34-37 Connaught Rd Central, Hong Kong, действующая под зарегистрированным товарным знаком Aviasales.</p>
+                  <p>1.2. Акция является мероприятием рекламного характера, направленным на стимулирование потребления услуг сайта aviasales.ru.</p>
+                  <p>1.3. Акция не является лотереей, тотализатором или иной основанной на риске азартной игрой.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="js/scripts.min.js"></script>
+   </body>
 </html>
