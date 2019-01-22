@@ -6,10 +6,41 @@
 @media only screen and (max-width : 1300px)
 	.wrapper
 		width: 962px
+		padding: 0 30px
 	.greeting
 		.sides
+			background-position: -6% 12%
 			.right-side
 				margin: 73px 0 0 0
+				.btn.btn-submit
+					margin-left: 0
+	.slot-xxl
+		.card-v
+			transform: scale(.4) translate(-50%, -50%)
+
+	.slot-xl
+		.card-v
+			transform: scale(.35) translate(-50%, -50%)
+
+	.slot-l
+		.card-v
+			transform: scale(.25) translate(-50%, -50%)
+
+	.slot-m
+		.card-v
+			transform: scale(.2) translate(-50%, -50%)
+
+	.slot-s
+		.card-v
+			transform: scale(.14) translate(-50%, -50%)
+			
+	.slot-xs
+		.card-v
+			transform: scale(.1) translate(-50%, -50%)
+		
+	.slot-xxs
+		.card-v
+			transform: scale(.05) translate(-50%, -50%)
 
 
 /* Medium Devices, Desktops */
@@ -20,6 +51,8 @@
 	.greeting
 		.sides
 			flex-direction: column
+			background-size: 63%
+			background-position: 50% 84%
 			.right-side
 				margin-top: 50px
 				order: 0
@@ -35,6 +68,12 @@
 					margin: 0
 			.left-side
 				order: 1
+				width: 100%
+				.show-more
+					position: relative
+					margin-top: -100px
+	.sides
+		padding-bottom: 74px
 
 			
 
