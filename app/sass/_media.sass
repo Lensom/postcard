@@ -61,7 +61,7 @@
 @media only screen and (max-width : 992px)
 	.wrapper
 		width: 100%
-		padding: 0 30px
+		padding: 0 15px
 	.greeting
 		.sides
 			flex-direction: column
@@ -155,8 +155,30 @@
 	// 2 страница
 
 	.constructor
+		height: auto
 		.etaps
 			flex-direction: column
+			max-height: none
+		.left-side
+			margin-top: 20px
+			justify-content: center
+		.right-side
+			margin: 0
+			margin-top: 20px
+			.text-block
+				text-align: center
+	.color-edit
+		justify-content: center
+	.choose-2
+		.alert-span
+			position: relative
+		.text-wrapper
+			padding-top: 5px
+			margin: 0 auto
+			margin-bottom: 10px
+
+	.modal-dialog
+		max-width: 600px
 
 			
 
@@ -166,6 +188,36 @@
 @media only screen and (max-width : 768px)
 	/**/
 
+/* Small Devices, Tablets */
+@media only screen and (max-width : 600px)
+	.tab
+		padding: 6px 12px
+		max-width: none
+		font-size: 14px
+	.constructor
+		.right-side
+			.text-block
+				min-width: auto
+				.etaps-wrapper
+					.tab
+						display: block
+						width: 180px
+						margin-bottom: 30px
+						margin: 0 auto
+						margin-bottom: 30px
+					.tab:nth-child(3)
+						margin-right: auto
+					.first-etap:after
+						top: 44px
+						right: 83px
+						transform: rotate(90deg)
+					.second-etap:after
+						top: 44px
+						right: 83px
+						transform: rotate(90deg)
+	
+	.modal-content
+		padding: 45px 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -176,6 +228,10 @@
 		.card-v
 			transform: scale(.8) translate(-50%, -50%) !important
 
+	// .constructor
+	// 	.left-side
+	// 		.card-v
+	// 			transform: scale(.4) translate(-50%, -50%) !important
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 440px)

@@ -51,7 +51,26 @@ $(".multiple-items").slick({
 	infinite: true,
 	slidesToShow: 5,
 	slidesToScroll: 1,
-	variableWidth: true
+	variableWidth: true,
+	responsive: [
+		{
+			breakpoint: 998,
+			settings: {
+				slidesToShow: 2,
+				infinite: false,
+				centerMode: true,
+				slidesToScroll: 1			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '40px',
+				slidesToShow: 1
+			}
+		}
+	]
 	
 });
 // Слайдер для choose-3
