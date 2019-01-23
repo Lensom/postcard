@@ -148,6 +148,10 @@ a.edit
 .non-active
 	opacity: 0.6
 
+.btn.btn-submit:disabled,
+.btn.btn-submit[disabled]
+	opacity: 0.6
+
 .btn-allow
 	margin-left: 40px
 	font-size: 14px
@@ -183,6 +187,7 @@ a.edit
 		color: #fff
 	&:focus
 		text-decoration: none
+		color: #fff
 .tab-active	
 	background: #ED74A9
 	box-shadow: 0px 4px 4px #E097B7
@@ -196,6 +201,7 @@ a.edit
 	box-shadow: 0px 4px 4px rgba(218, 160, 186, 0.5)
 	&:hover
 		color: #DAA0BA
+		color: #fff
 
 // Выбор элемента
 .elements
@@ -268,8 +274,8 @@ a.edit
 	max-width: 526px
 	.counter
 		position: absolute
-		bottom: 15px
-		right: 10px
+		bottom: 11px
+		right: 11px
 		line-height: 16px
 		font-size: 12px
 		color: #FFA2B3
@@ -285,7 +291,7 @@ a.edit
 		outline: none
 		padding: 10px 19px
 		line-height: 21px
-		font-size: 16px
+		font-size: 18px
 		color: #4B4B4B
 		resize: none
 		&:focus
@@ -357,6 +363,7 @@ input.error
 			.slots
 				height: 100vh
 				position: relative
+				margin-top: -132px
 				.slot
 					width: 0
 					height: 0	
@@ -455,13 +462,15 @@ input.error
 					top: 54.7%
 					left: 9%
 
-
+a.logotype 
+	display: block
+	text-align: right
+	padding-top: 72px
+	padding-right: 27px
 .right-side
-	margin: 73px 28px 0 0
-	position: relative
-	a.logotype 
-		display: block
-		text-align: right
+	margin: 0 28px 0 0
+	position: relative	
+	overflow: hidden
 	.text-block
 		margin: 112px 0 0 244px
 	h1
@@ -527,13 +536,23 @@ input.error
 		opacity: 1 !important
 		filter: drop-shadow(-0px 0px 25px #FFFFFF)
 		transform: scale(.6) translate(-50%, -50%) !important 
+	.alert-drag
+		position: absolute
+		font-weight: 300
+		line-height: 23px
+		font-size: 18px
+		width: 100%
+		left: 0
+		bottom: 0
+		color: #ED74A9
+
 	p 
 		padding: 172px 57px  
 		font-family: Raleway, font-serif
 		font-style: italic
 		font-weight: normal
 		line-height: 15px
-		font-size: 12px
+		font-size: 18px
 		text-align: center
 	.decor
 		width: 85px
@@ -671,18 +690,198 @@ input.error
 	height: 100vh
 	.etaps
 		display: flex
+		justify-content: space-between
+		max-height: 500px
 		.card-v
 			box-shadow: none
 			filter: none
 			&:hover
-
 				z-index: 100 !important
 				opacity: 1 !important
 				transform: none !important
-	.right-side
+	.left-side
+		display: flex
+    justify-content: center
+		.card-v 
+			margin-top: 0
+			margin-left: 64px
+	.right-side	
+		margin-left: 63px	
 		.logotype
 			text-align: right
+		.text-block
+			font-family: Rubik
+			font-weight: 500
+			line-height: 23px
+			font-size: 18px
+			color: #4B4B4B
+			margin: 0
+			margin: 94px 30px
+			margin-right: 18px
+			.rules
+				margin-top: 226px
+				.common
+					margin-right: -18px
+			.etaps-wrapper
+				margin-top: 35px
+				.tab
+					position: relative
+					margin-right: 41px
+					&:nth-child(3)
+						margin-right: 0
+				.first-etap
+					&:after
+						content: ''
+						position: absolute
+						background-image: url(../img/arrow-right.svg)
+						top: 22px
+						right: -26px
+						width: 12px
+						height: 14px
+				.second-etap
+					&:after
+						content: ''
+						position: absolute
+						background-image: url(../img/arrow-right.svg)
+						top: 22px
+						right: -29px
+						width: 12px
+						height: 14px
+			.multiple-items
+				display: flex
+				margin-top: 50px
+				// margin-left: 2px
+				.owl-item 
+					display: inline-block
+					width: 97px
+					height: 97px
+					margin-right: 10px
+					background-color: red
+					display: flex
+					justify-content: center
+					align-items: center
+					box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+					background: #FFFCF8
+					border-radius: 6px
+					margin-bottom: 7px
+					&:hover
+						border: 3px solid rgba(255, 162, 179, 0.5)
+					img 
+						width: 80px
+						height: 80px
+				.active
+					border: 3px solid rgba(255, 162, 179, 0.5)
+	.btn-wrapper
+		text-align: center
+		// margin-top: -226px
+		.btn
+			line-height: 23px
+			font-size: 18px
+			padding: 22px 56px
 
 
+.choose-2
+	font-family: Rubik, sans-serif
+	font-weight: 300
+	line-height: 16px
+	font-size: 12px
+	color: #ED74A9
+	margin-top: 26px
+	position: relative
+	.alert-span 
+		margin-left: 2px
+		position: absolute
+		top: 0
+		left: 0
+		img 
+			margin-top: -2px
+			margin-right: 3px
+	.text-wrapper
+		padding-top: 23px
+		margin-bottom: 10px
 
+
+a.owl-item.slick-slide
+	max-width: 97px
+	outline: none
+
+button.slick-prev.slick-arrow
+	background-color: transparent
+	border: none
+	position: absolute
+
+button.slick-next.slick-arrow
+	background-image: url(../img/arrow-right.svg)
+	background-color: transparent
+	background-position: 55% 50%
+	color: transparent
+	border: none
+	width: 33px
+	height: 13px
+	position: absolute
+	right: -39px
+	top: 39px
+	padding: 0
+	outline: none
+
+button.slick-prev.slick-arrow
+	background-image: url(../img/arrow-left.svg)
+	background-color: transparent
+	background-position: 110% 50%
+	color: transparent
+	border: none
+	width: 20px
+	height: 13px
+	position: absolute
+	left: -39px
+	top: 39px
+	padding: 0
+	outline: none
+
+.ui-widget-content
+	position: relative
+	z-index: 99
+
+.etaps
+	.decor-1
+		width: 200px
+		height: 200px
+	.decor-2
+		width: 150px
+		height: 150px
+	.decor-3
+		width: 200px
+		height: 200px
+	.decor-4
+		width: 200px
+		height: 200px
+	.decor-5
+		width: 150px
+		height: 150px
+	.decor-6
+		width: 206px
+		height: 206px
+	.decor-7
+		width: 150px
+		height: 150px
+
+.hidden
+	display: none
+
+.slick-list
+	width: 100%
+
+.wrapp
+	.rules
+		text-align: right
+		margin-top: 28px
+		margin-right: 27px
+		.common
+			display: inline-block
+			border-bottom: 2px dashed transparent
+			&:hover
+				text-decoration: none
+				border-bottom: 2px dashed #A163F5
+	.btn-wrapper
+		margin-top: 9px
 @import "media" // Всегда в конце

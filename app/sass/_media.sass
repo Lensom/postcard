@@ -12,6 +12,12 @@
 			background-position: -6% 12%
 			.right-side
 				margin: 73px 0 0 0
+				h1 
+					br 
+						display: none
+				.text-block
+					margin: 112px 0 0 140px
+					text-align: center
 				.btn.btn-submit
 					margin-left: 0
 	.slot-xxl
@@ -42,6 +48,14 @@
 		.card-v
 			transform: scale(.1) translate(-50%, -50%)
 
+	// 2 Страница
+	.constructor
+		.left-side
+			.card-v
+				margin-left: 0
+		.right-side
+			.text-block
+				margin: 0
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -132,12 +146,17 @@
 					.slot-29
 						left: 18%
 
-
 	.active
 		top: 40% !important
 		left: 50% !important
 	.sides
 		padding-bottom: 74px
+	
+	// 2 страница
+
+	.constructor
+		.etaps
+			flex-direction: column
 
 			
 
