@@ -35,7 +35,9 @@ $("textarea").keyup(function() {
 // Клик на открытку
 
 $('.card-v').on('click', function(e){	
-	if (!$(this).closest('.slot').hasClass('active')) {
+	if ($(this).closest('.slot').hasClass('my-card')) {
+		return false;
+	} else if (!$(this).closest('.slot').hasClass('active')) {
 		$('.slot').removeClass('active');	
 		$(this).closest('.slot').addClass('active');
 	} else {
@@ -179,11 +181,17 @@ $('.third-etap').on('click', function(){
 	var myPostcard = {
 		background: '',
 		message: '',		
-		sticker: ''
+		sticker: '',
+		colorText: '',
+		posLeft: '',
+		posTop: ''
 	};
 
 	$('.btn.btn-submit').on('click', function(){
-		myPostcard.message = $('textarea').val()
+		myPostcard.message = $('textarea').val();
+		myPostcard.posLeft = $('#draggable3').css('left');
+		myPostcard.posTop = $('#draggable3').css('top');
+		myPostcard.colorText = $('.text-card').css('color');
 		var bgcList = $('#card').attr('class').split(/\s+/);
 		var decorList = $('#draggable3').attr('class').split(/\s+/);
 		$.each(bgcList, function(index, item) {
@@ -195,10 +203,14 @@ $('.third-etap').on('click', function(){
 				if (item == 'decor-1'|| item == 'decor-2'|| item == 'decor-3'|| item == 'decor-4'|| item == 'decor-5'|| item == 'decor-6'|| item == 'decor-7') {
 						myPostcard.sticker = item;
 				}
-		});
+		});		
+
 		console.log(myPostcard)
 	})
 	
+// Последняя страница
+
+// не давать my-card active
 
 
 

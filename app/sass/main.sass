@@ -81,6 +81,7 @@ a.common.show-more
 		left: -35px
 		top: 5px
 a.edit 
+	display: inline-block
 	&:before
 		content: ''
 		background-image: url(../img/edit-icon.svg)
@@ -231,6 +232,11 @@ a.edit
 		justify-content: center
 		background: #ED74A9		
 		border-radius: 6px
+		animation-name: one
+		animation-duration: 1s
+		animation-iteration-count: infinite
+		animation-delay: 1s
+		animation-direction: alternate
 		&:hover
 			box-shadow: 0px 4px 4px #E097B7
 
@@ -318,10 +324,12 @@ input
 	border-radius: 6px
 	outline: none
 	color: #D0B79C
-	padding: 13px 101px 7px 43px
+	padding: 11px 8px 7px 43px
 	height: 44px
 	position: relative
 	max-width: 252px
+	border: none
+	color: #4B4B4B
 	&:focus
 		box-shadow: 0px 4px 4px rgba(237, 116, 169, 0.5)
 input.email
@@ -504,7 +512,8 @@ a.logotype
 		border: none
 	.rules
 		text-align: right
-		margin-top: 164px
+		margin-top: 174px
+		margin-right: -1px
 		.common
 			display: inline-block
 			border-bottom: 2px dashed transparent
@@ -633,6 +642,10 @@ a.logotype
 	.decor
     transform: scale(2)
 
+.my-card
+	.card-v
+		transform: scale(.7) translate(-50%, -50%)
+
 .active
 	top: 44% !important
 	left: 66% !important
@@ -753,7 +766,6 @@ a.logotype
 				margin-top: 50px
 				// margin-left: 2px
 				.owl-item 
-					display: inline-block
 					width: 97px
 					height: 97px
 					margin-right: 10px
@@ -774,7 +786,6 @@ a.logotype
 					border: 3px solid rgba(255, 162, 179, 0.5)
 	.btn-wrapper
 		text-align: center
-		// margin-top: -226px
 		.btn
 			line-height: 23px
 			font-size: 18px
@@ -885,4 +896,287 @@ button.slick-prev.slick-arrow
 				border-bottom: 2px dashed #A163F5
 	.btn-wrapper
 		margin-top: 9px
+
+.constructor .etaps .card-v.rotate-card
+	transform: rotate(-11deg) !important
+
+// 3 страница
+
+.page-3
+	background-image: url(../img/page3bgc.png)
+	.etaps
+		max-height: none
+	.left-side
+		background-image: url(../img/backto3page.png)
+		background-position: 0 0px
+		flex-direction: column
+		padding-right: 82px
+		margin-top: -38px
+		max-height: 592px
+		.card-v
+			margin-left: 10px
+			margin-top: 95px
+		a.common
+			max-width: 144px // Почему - потому что
+			margin-bottom: 7px
+			margin-left: 87px
+	.right-side
+		margin-left: 60px
+		.text-block
+			margin: 0
+			text-align: left
+			margin-top: 56px
+			margin-left: 3px
+			h2 
+				font-family: Rubik
+				font-style: normal
+				font-weight: 500
+				line-height: 36px
+				font-size: 28px
+				color: #4B4B4B
+				text-align: left
+				margin-bottom: 29px
+			p 
+				font-family: Rubik
+				font-style: normal
+				font-weight: normal
+				line-height: 26px
+				font-size: 20px
+				color: #222222
+		.social-network
+			margin: 28px 0
+			.social-element
+				margin-right: 15px
+				width: 55px
+				height: 55px
+				font-size: 12px
+				img 
+					width: 18px
+					margin: 0 auto
+				img.vk 
+					width: 35px
+				img.odno 
+					width: 19px
+				img.twitter 
+					width: 35px
+		.input-wrapper
+			border: none
+			margin-top: 14px
+			position: relative
+			padding-left: 10px
+			input
+				margin-bottom: 6px
+				// margin-left: -2px
+			label 
+				position: relative
+				img 
+					position: absolute
+					z-index: 1
+					top: 17px
+					left: 15px
+			label[for=email]
+				img 
+					top: 15px
+					left: 12px
+			label[for=phone]
+				top: 55px
+				img
+					top: 14px
+					left: 44px 
+				.required
+						left: 18px
+			input.phone
+				max-width: 226px
+				margin-left: 30px
+				padding-right: 8px
+	.wrapp
+		margin-top: -56px
+		.rules
+			margin-top: 30px
+	.btn-wrapper
+		.btn
+			padding: 22px 53px
+
+
+.required
+	position: absolute
+	width: 9px
+	height: 27px
+	left: -14px
+	top: -2px
+	font-family: Rubik
+	font-style: normal
+	font-weight: normal
+	line-height: 26px
+	font-size: 20px
+	color: #ED74A9
+
+// Последняя страница
+
+.last-main
+	min-height: 100vh
+	a.logotype
+		text-align: center 
+		padding: 0
+		padding-top: 44px
+		img 
+			width: 175px
+	h2
+		font-weight: 500
+		line-height: 36px
+		font-size: 28px
+		text-align: center
+		color: #EC4790
+		margin-top: 21px
+	.sides.last-page
+		background-image: none
+		.left-side
+			width: 100%
+			.show-more
+				left: auto
+				position: relative
+				margin-top: -40px
+		.slots
+			height: 500px
+			margin-top: 0
+			.slot-1.my-card
+				top: 32%
+				left: 50%
+				z-index: 1111
+				animation-name: one
+				animation-duration: 1s
+				animation-iteration-count: infinite
+				animation-delay: 1s
+				animation-direction: alternate
+				filter: drop-shadow(-0px 0px 25px #FFFFFF)
+				&:hover
+					 animation-play-state: paused
+					 .card-v
+						 transform: scale(.85) translate(-50%, -50%) !important
+			.slot-2
+				top: 22.7%
+				left: 31.5%
+			.slot-3
+				top: 29.6%
+				left: 65.3%
+			.slot-4
+				top: 55.7%
+				left: 43.4%
+			.slot-5
+				top: 45%
+				left: 66.4%
+				.card-v
+					z-index: 4
+			.slot-6
+				top: 29.6%
+				left: 24.8%
+			.slot-7
+				top: 10.8%
+				left: 17.8%
+			.slot-8
+				top: 21%
+				left: 88.4%
+			.slot-9
+				top: 68.3%
+				left: 48.1%
+			.slot-10
+				top: 64.6%
+				left: 89.4%
+			.slot-11
+				top: 12.5%
+				left: 69.7%
+			.slot-12
+				top: 47.9%
+				left: 78.45%			
+			.slot-13
+				top: 53.7%
+				left: 59.5%	
+				.card-v
+					z-index: 3
+			.slot-14
+				top: 70.4%
+				left: 68.3%
+			.slot-15
+				top: 30%
+				left: 13%
+			.slot-16
+				top: 39.9%
+				left: 17.4%
+			.slot-17
+				top: 74.5%
+				left: 59%
+			.slot-18
+				top: 42%
+				left: 94%
+			.slot-19
+				top: 67%
+				left: 14.8%
+			.slot-20
+				top: 70%
+				left: 76.8%
+			.slot-21	
+				top: 73.4%
+				left: 93%
+			.slot-22
+				top: 56%
+				left: 19.8%
+			.slot-23
+				top: 21.2%
+				left: 6.2%
+			.slot-24
+				top: 8%
+				left: 96.4%
+			.slot-25
+				top: 63.6%
+				left: 99%
+			.slot-26
+				top: 29.5%
+				left: 95%
+			.slot-27
+				top: 73.2%
+				left: 36.4%
+			.slot-28
+				top: 23%
+				left:	78.6%
+			.slot-29
+				top: 46.7%
+				left: 9%
+			.slot-30
+				top: 60%
+				left: 29%
+			.slot-31
+				top: 65%
+				left: 6%
+			.slot-32
+				top: 43%
+				left: 4%
+			.active
+				top: 50% !important
+				left: 50% !important
+				z-index: 1111 !important
+				.card-v
+					transform: scale(.85) translate(-50%, -50%) !important
+					opacity: 1 !important
+					// уменьшить н 15%
+
+
+		.text-block
+			text-align: center
+			margin-top: -48px
+			p 
+				margin-top: 23px
+				margin-bottom: 22px
+				line-height: 26px
+				font-size: 20px
+				color: #222222
+			a.common 
+				display: inline
+			a.common.show-more
+				margin-left: 32px
+			.social-network
+				justify-content: center
+				.social-element
+					// margin-right: 12px
+					margin: 0 10px
+
 @import "media" // Всегда в конце

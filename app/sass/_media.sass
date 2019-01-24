@@ -6,7 +6,7 @@
 @media only screen and (max-width : 1300px)
 	.wrapper
 		width: 962px
-		padding: 0 30px
+		padding: 0 15px
 	.greeting
 		.sides
 			background-position: -6% 12%
@@ -54,8 +54,76 @@
 			.card-v
 				margin-left: 0
 		.right-side
+			margin: 0
 			.text-block
+				min-width: 0
 				margin: 0
+				.etaps-wrapper
+					.tab
+						margin-right: 25px
+						font-size: 16px
+						max-width: 120px
+						padding: 6px 14px
+					.first-etap,
+					.second-etap
+						&:after
+							right: -21px
+
+	
+	.last-main
+		.last-page
+			.left-side
+				.slot-xxl
+					.card-v
+						transform: scale(.5) translate(-50%, -50%)
+
+				.slot-xl
+					.card-v
+						transform: scale(.45) translate(-50%, -50%)
+
+				.slot-l
+					.card-v
+						transform: scale(.35) translate(-50%, -50%)
+
+				.slot-m
+					.card-v
+						transform: scale(.3) translate(-50%, -50%)
+
+				.slot-s
+					.card-v
+						transform: scale(.24) translate(-50%, -50%)
+						
+				.slot-xs
+					.card-v
+						transform: scale(.2) translate(-50%, -50%)
+					
+				.slot-xxs
+					.card-v
+						transform: scale(.2) translate(-50%, -50%)
+	
+	.page-3
+		.right-side
+			margin-left: 28px
+			.input-wrapper
+				label[for=phone]
+					top: 0
+					img 
+						left: 13px
+					.required
+						left: -10px
+				input.phone 
+					margin-left: 0
+					max-width: 252px
+			.text-block 
+				p 
+					br 
+						display: none
+		.left-side
+			padding-right: 92px
+
+	.required
+		left: -10px
+	
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -154,6 +222,22 @@
 	
 	// 2 страница
 
+	.last-main
+		.last-page
+			.left-side
+				.slots
+					.slot-13
+						left: 66%
+					.slot-5
+						left: 53.5%
+					.slot-31
+						left: 14%
+					.slot-32
+						left: 12%
+					.slot-12
+						left: 76.7%
+
+
 	.constructor
 		height: auto
 		.etaps
@@ -162,11 +246,14 @@
 		.left-side
 			margin-top: 20px
 			justify-content: center
+			width: 100%
 		.right-side
 			margin: 0
 			margin-top: 20px
 			.text-block
 				text-align: center
+				h2 
+					text-align: center
 	.color-edit
 		justify-content: center
 	.choose-2
@@ -176,17 +263,49 @@
 			padding-top: 5px
 			margin: 0 auto
 			margin-bottom: 10px
+	
+	.social-network
+		justify-content: center
 
 	.modal-dialog
 		max-width: 600px
+
+	.page-3
+		.right-side
+			.input-wrapper
+				label[for=phone]
+					margin: 0 15px
+		.wrapp 
+			margin-top: 0
+		.left-side
+			max-width: 592px
+			margin: 0 auto
+	.wrapp
+		padding-bottom: 30px
 
 			
 
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	/**/
+@media only screen and (max-width : 640px)
+	.page-3
+		.left-side
+			background-position: 50% 16%
+			background-size: contain
+			background-repeat: no-repeat
+			max-height: none
+			width: 500px
+			padding-right: 0
+			.card-v
+				margin: 0 auto
+				margin-top: 120px
+				margin-left: 24px
+	
+	.constructor
+		.left-side
+			.card-v.rotate-card
+				transform: scale(.8) rotate(-11deg) !important
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 600px)
@@ -207,17 +326,42 @@
 						margin-bottom: 30px
 					.tab:nth-child(3)
 						margin-right: auto
-					.first-etap:after
-						top: 44px
-						right: 83px
-						transform: rotate(90deg)
-					.second-etap:after
-						top: 44px
-						right: 83px
-						transform: rotate(90deg)
+					.first-etap,
+					.second-etap
+						&:after
+							top: 68px
+							right: 54px
+							transform: rotate(90deg)
 	
 	.modal-content
 		padding: 45px 15px
+	
+	.last-main
+		.sides.last-page
+			.text-block
+				p 
+					br 
+						display: none
+			.left-side
+				.slots
+					.slot-12
+						left: 62.7%
+				.slot-xxl
+					.card-v
+						transform: scale(.4) translate(-50%, -50%)
+				.slot-xl
+					.card-v
+						transform: scale(.35) translate(-50%, -50%)
+				.slot-l
+					.card-v
+						transform: scale(.25) translate(-50%, -50%)
+				.slot-m
+					.card-v
+						transform: scale(.2) translate(-50%, -50%)
+				.slot-s
+					.card-v
+						transform: scale(.2) translate(-50%, -50%)
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -227,11 +371,24 @@
 	.active
 		.card-v
 			transform: scale(.8) translate(-50%, -50%) !important
-
-	// .constructor
-	// 	.left-side
-	// 		.card-v
-	// 			transform: scale(.4) translate(-50%, -50%) !important
+	.page-3
+		.right-side
+			margin-top: -135px
+		.left-side
+			width: 400px
+			a.common 
+				position: absolute
+				margin-top: 24%
+			.card-v
+				margin-top: 100px
+				margin-left: 0
+			.card-v.rotate-card
+				transform: scale(.7) rotate(-11deg) !important
+	.left-side
+		margin: 0 auto
+		.card-v
+			transform: scale(.8)  translate( 12.5%, 12.5%) 
+			margin: 0 auto
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 440px)
@@ -241,3 +398,18 @@
 	.btn-submit
 		font-size: 16px
 		padding: 16px 20px
+	.last-main
+		.sides.last-page
+			.slots
+				.active
+					.card-v
+						transform: scale(.62) translate(-50%,-50%) !important
+	.page-3
+		.left-side
+			width: 300px
+			.card-v.rotate-card
+				transform: scale(.5) rotate(-11deg) !important
+			.card-v
+				margin-top: 111px
+		.right-side
+			margin-top: -200px
