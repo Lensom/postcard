@@ -207,14 +207,28 @@ $('.third-etap').on('click', function(){
 
 		console.log(myPostcard)
 	})
-	
-// Последняя страница
-
-// не давать my-card active
-
-
 
 	
+	$('.send').on('click', function() {
+		location.href="/page3.html"
+	})
+
+	$('.ready').on('click', function() {
+		if ($('.email').length < 4) {
+			$('.email').addClass('error')
+			// return false
+		} 
+		 if ($('.name').length < 2) {
+			$('.name').addClass('error')
+			// return false
+		}
+		if ($('.phone').length < 4) {
+			$('.phone').addClass('error')
+			// return false
+		} else {
+			location.href="/last-page.html"
+		}
+	})
 
 
 	

@@ -11,7 +11,7 @@
 		.sides
 			background-position: -6% 12%
 			.right-side
-				margin: 73px 0 0 0
+				margin: 0
 				h1 
 					br 
 						display: none
@@ -76,27 +76,21 @@
 				.slot-xxl
 					.card-v
 						transform: scale(.5) translate(-50%, -50%)
-
 				.slot-xl
 					.card-v
 						transform: scale(.45) translate(-50%, -50%)
-
 				.slot-l
 					.card-v
 						transform: scale(.35) translate(-50%, -50%)
-
 				.slot-m
 					.card-v
 						transform: scale(.3) translate(-50%, -50%)
-
 				.slot-s
 					.card-v
-						transform: scale(.24) translate(-50%, -50%)
-						
+						transform: scale(.24) translate(-50%, -50%)						
 				.slot-xs
 					.card-v
-						transform: scale(.2) translate(-50%, -50%)
-					
+						transform: scale(.2) translate(-50%, -50%)					
 				.slot-xxs
 					.card-v
 						transform: scale(.2) translate(-50%, -50%)
@@ -151,79 +145,126 @@
 			.left-side
 				order: 1
 				width: 100%
+				.wrapper-show
+					text-align: center
 				.show-more
 					position: relative
+					display: inline-block
 					margin-top: -100px
+					left: auto
 				.slots
+					height: 65vh
 					.slot-1
+						top: 56%
 						left: 59.2%
 					.slot-2
+						top: 45.7%
 						left: 38%
 					.slot-3
+						top: 69.6%
 						left: 68.2%
 					.slot-4
+						top: 75.2%
 						left: 34.8%
 					.slot-5
+						top: 62%
 						left: 47.5%
 					.slot-6
+						top: 68.4%
 						left: 29.5%
 					.slot-7
+						top: 35.3%
 						left: 46.5%
 					.slot-8
+						top: 43.3%
 						left: 62.6%
 					.slot-10
+						top: 84.3%
 						left: 61%
 					.slot-9
+						top: 76.3%
 						left: 55%
+					.slot-10
+						top: 84.3%
 					.slot-11
+						top: 36.5%
 						left: 71.4%
 					.slot-13
+						top: 58.7%
 						left: 73%
 					.slot-12
+						top: 68%
 						left: 82.7%
 					.slot-14
+						top: 80.4%
 						left: 75.3%
 					.slot-15
+						top: 43.8%
 						left: 26.5%
 					.slot-28
+						top: 33%
 						left: 57.6%
 					.slot-16
+						top: 55.4%
 						left: 20%
 					.slot-17
+						top: 84.5%
 						left: 48%
 					.slot-18
+						top: 48.5%
 						left: 75.7%
 					.slot-19
+						top: 84.5%
 						left: 23.4%
 					.slot-20
+						top: 90.3%
 						left: 49.4%
 					.slot-21
+						top: 89.4%
 						left: 78.7%
 					.slot-22
+						top: 32.7%
 						left: 31.3%
 					.slot-23
+						top: 27.2%
 						left: 50.7%
 					.slot-24
+						top: 28%
 						left: 75.4%
 					.slot-25
+						top: 53.6%
 						left: 79%
 					.slot-26
+						top: 42.5%
 						left: 78%
 					.slot-27
+						top: 91.2%
 						left: 41.4%
 					.slot-29
+						top: 74.7%
 						left: 18%
 
 	.active
 		top: 40% !important
 		left: 50% !important
+	.greeting
+		.sides
+			.left-side
+				.slots
+					.slot.active
+						top: 57% !important
 	.sides
 		padding-bottom: 74px
 	
 	// 2 страница
 
 	.last-main
-		.last-page
+		.sides.last-page
+			.slots
+				.slot-1.my-card
+					top: 54%
+			.text-block
+				margin-top: 50px
 			.left-side
 				.slots
 					.slot-13
@@ -246,7 +287,8 @@
 		.left-side
 			margin-top: 20px
 			justify-content: center
-			width: 100%
+			width: 600px
+			margin: 0 auto
 		.right-side
 			margin: 0
 			margin-top: 20px
@@ -283,29 +325,37 @@
 	.wrapp
 		padding-bottom: 30px
 
-			
-
-
-
 /* Small Devices, Tablets */
 @media only screen and (max-width : 640px)
+	a.logotype 
+		padding-right: 0
+		text-align: center
 	.page-3
 		.left-side
 			background-position: 50% 16%
 			background-size: contain
 			background-repeat: no-repeat
 			max-height: none
-			width: 500px
+			width: 400px
 			padding-right: 0
 			.card-v
 				margin: 0 auto
 				margin-top: 120px
 				margin-left: 24px
-	
-	.constructor
-		.left-side
 			.card-v.rotate-card
 				transform: scale(.8) rotate(-11deg) !important
+	.constructor
+		.left-side
+			width: 500px
+			.card-v
+				transform: scale(.8) translate(12.5%, 12.5% )
+	
+	.wrapp
+		.rules
+			margin-right: 0
+			text-align: center
+
+		
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 600px)
@@ -361,6 +411,12 @@
 				.slot-s
 					.card-v
 						transform: scale(.2) translate(-50%, -50%)
+	
+	.page-3
+		.right-side
+			.input-wrapper
+				label[for=phone]
+					margin-bottom: 6px
 
 
 /* Extra Small Devices, Phones */
@@ -387,8 +443,23 @@
 	.left-side
 		margin: 0 auto
 		.card-v
-			transform: scale(.8)  translate( 12.5%, 12.5%) 
+			// transform: scale(.8)  translate( 12.5%, 12.5%) 
 			margin: 0 auto
+	.last-main
+		.sides.last-page
+			.slots
+				.slot-1.my-card					
+					.card-v
+						transform: scale(.75) translate(-50%, -50%)!important
+						&:hover
+							transform: scale(.6) translate(-50%,-50%)!important
+	.constructor
+		// .left-side
+		// 	width: 485px
+			.card-v
+				transform: scale(.6) translate(33%,33%)!important
+
+ 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 440px)
@@ -413,3 +484,14 @@
 				margin-top: 111px
 		.right-side
 			margin-top: -200px
+	.greeting
+		.active
+			.card-v
+				transform: scale(.62) translate(-50%,-15%) !important
+	
+	.last-main
+		.sides.last-page
+			.slots
+				.slot-1.my-card
+					.card-v
+						transform: scale(.5) translate(-50%, -50%)!important
