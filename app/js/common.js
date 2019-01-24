@@ -252,10 +252,10 @@ $('.third-etap').on('click', function(){
 
 
 
+	$('#text-card').val(getMessage)
+	$('#textarea').val(getMessage)
 	document.getElementById("text-card").textContent = getMessage;
-	// if($('.text-wrapper')) {
-	// 	document.getElementById("textarea").textContent = getMessage;
-	// }
+
 	
 
 	$('.card-v').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
@@ -271,7 +271,7 @@ $('.third-etap').on('click', function(){
 
 
 	if (!getMessage) {
-		document.getElementById("textarea").setAttribute('value', ' ');
+		$('#textarea').val(getMessage)
 		document.getElementById("text-card").setAttribute('value', ' ');
 	}
 
