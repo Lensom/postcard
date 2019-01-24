@@ -30,12 +30,14 @@
             </a>
             <div class="etaps">
                <div class="left-side">
-                  <div class="card-v bgc6" id="card">
-                     <p class="text-card" id="text-card"></p>
-                     <!-- <div class="decor decor-1"></div> -->
-                     <div id="draggable3" style="left: 261px; top: 20px;" class="decor draggable ui-widget-content decor-3 hidden">
+                  <div class="etap-wrp">
+                     <div class="card-v bgc6" id="card">
+                        <p class="text-card" id="text-card"></p>
+                        <!-- <div class="decor decor-1"></div> -->
+                        <div id="draggable3" style="left: 261px; top: 20px;" class="decor draggable ui-widget-content decor-3 hidden">
+                        </div>
+                        <span class="alert-drag hidden">Передвигайте украшения, зажав левую кнопку мыши</span>
                      </div>
-                     <span class="alert-drag hidden">Передвигайте украшения, зажав левую кнопку мыши</span>
                   </div>
                </div>
                <div class="right-side">
@@ -59,7 +61,7 @@
                      <div class="choose choose-2 hidden">
                         <span class="alert-span"><img src="img/alert.svg" alt="">Текст должен быть более 10 символов!</span>
                         <div class="text-wrapper">
-                           <textarea class="textarea" placeholder="Ваше послание..." maxlength="350"></textarea>
+                           <textarea class="textarea" id="textarea" placeholder="Ваше послание..." maxlength="350"></textarea>
                            <div class="counter">0</div>
                         </div>
                         <div class="color-edit btns">

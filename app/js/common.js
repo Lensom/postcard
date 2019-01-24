@@ -28,7 +28,7 @@ $("textarea").keyup(function() {
 			$('.text-card').css('font-size', '12px')
 		}
 
-		$(".text-card").html(count);
+		$(".text-card").text(count);
 	return false;
 });
 
@@ -252,7 +252,12 @@ $('.third-etap').on('click', function(){
 
 
 
-	document.getElementById("text-card").innerHTML = getMessage;
+	document.getElementById("text-card").textContent = getMessage;
+	// if($('.text-wrapper')) {
+	// 	document.getElementById("textarea").textContent = getMessage;
+	// }
+	
+
 	$('.card-v').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
 	$('.card-v').addClass(getBackground);
 	$('.decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7');
@@ -263,22 +268,20 @@ $('.third-etap').on('click', function(){
 	});
 	$('.text-card').css('color', getColorText)
 
-	// if (!$('.card-v').hasClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6')) {
-	// 	$('.card-v').addClass('bgc6')
-	// }
-	
+
+
 	if (!getMessage) {
-	document.getElementById("text-card").setAttribute('value', ' ');
+		document.getElementById("textarea").setAttribute('value', ' ');
+		document.getElementById("text-card").setAttribute('value', ' ');
 	}
 
-	
+	if(getMessage && getSticker && getBackground) {
+		$('.btn.btn-submit').removeAttr('disabled')
+	}
 
-
-	
-
-	
+		
 	$('.send').on('click', function() {
-		location.href="/page3.html"
+		location.href="/preview/Postcard/page3.html"
 	})
 
 	$('.ready').on('click', function() {
