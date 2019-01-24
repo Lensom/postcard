@@ -187,6 +187,34 @@ $('.third-etap').on('click', function(){
 		posTop: ''
 	};
 
+	function setCookie (name, value, expires, path, domain, secure) {
+		document.cookie = name + "=" + escape(value) +
+			((expires) ? "; expires=" + expires : "") +
+			((path) ? "; path=" + path : "") +
+			((domain) ? "; domain=" + domain : "") +
+			((secure) ? "; secure" : "");
+	}
+	
+	function getCookie(name) {
+		var cookie = " " + document.cookie;
+		var search = " " + name + "=";
+		var setStr = null;
+		var offset = 0;
+		var end = 0;
+		if (cookie.length > 0) {
+			offset = cookie.indexOf(search);
+			if (offset != -1) {
+				offset += search.length;
+				end = cookie.indexOf(";", offset)
+				if (end == -1) {
+					end = cookie.length;
+				}
+				setStr = unescape(cookie.substring(offset, end));
+			}
+		}			 
+		return(setStr);
+	}
+
 	$('.btn.btn-submit').on('click', function(){
 		myPostcard.message = $('textarea').val();
 		myPostcard.posLeft = $('#draggable3').css('left');
@@ -197,16 +225,56 @@ $('.third-etap').on('click', function(){
 		$.each(bgcList, function(index, item) {
 				if (item == 'bgc1'|| item == 'bgc2' || item == 'bgc3' || item == 'bgc4' || item == 'bgc5' || item == 'bgc6') {
 						myPostcard.background = item;
+						setCookie("background", item , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 				}
 		});
 		$.each(decorList, function(index, item) {
 				if (item == 'decor-1'|| item == 'decor-2'|| item == 'decor-3'|| item == 'decor-4'|| item == 'decor-5'|| item == 'decor-6'|| item == 'decor-7') {
 						myPostcard.sticker = item;
+						setCookie("sticker", item , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 				}
 		});		
+		setCookie("message", $('textarea').val() , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+		setCookie("posTop", $('#draggable3').css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+		setCookie("posLeft", $('#draggable3').css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+		setCookie("colorText", $('.text-card').css('color') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 
-		console.log(myPostcard)
+		console.log(myPostcard)	
+
 	})
+
+	var getMessage = getCookie("message");		
+	var getBackground = getCookie("background");
+	var getSticker = getCookie("sticker");
+	var getColorText = getCookie("colorText");
+	var getPosLeft = getCookie("posLeft");
+	var getPosTop = getCookie("posTop");
+
+
+
+	document.getElementById("text-card").innerHTML = getMessage;
+	$('.card-v').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
+	$('.card-v').addClass(getBackground);
+	$('.decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7');
+	$('.decor').removeClass('hidden').addClass(getSticker);
+	$('.decor').css({
+		'left': getPosLeft,
+		'top' : getPosTop
+	});
+	$('.text-card').css('color', getColorText)
+
+	// if (!$('.card-v').hasClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6')) {
+	// 	$('.card-v').addClass('bgc6')
+	// }
+	
+	if (!getMessage) {
+	document.getElementById("text-card").setAttribute('value', ' ');
+	}
+
+	
+
+
+	
 
 	
 	$('.send').on('click', function() {
@@ -230,8 +298,6 @@ $('.third-etap').on('click', function(){
 		}
 	})
 
-
 	
+
 }) 
-
-

@@ -903,15 +903,19 @@ button.slick-prev.slick-arrow
 
 .page-3
 	background-image: url(../img/page3bgc.png)
+	.decor.draggable
+		pointer-events: none
 	.etaps
 		max-height: none
 	.left-side
 		background-image: url(../img/backto3page.png)
+		background-repeat: no-repeat
 		background-position: 0 0px
 		flex-direction: column
 		padding-right: 82px
 		margin-top: -38px
-		max-height: 592px
+		max-height: 612px
+		// max-height: 592px
 		.card-v
 			margin-left: 10px
 			margin-top: 95px
@@ -919,6 +923,7 @@ button.slick-prev.slick-arrow
 			max-width: 144px // Почему - потому что
 			margin-bottom: 7px
 			margin-left: 87px
+			margin-top: -37px
 	.right-side
 		margin-left: 60px
 		.text-block
@@ -990,7 +995,7 @@ button.slick-prev.slick-arrow
 	.wrapp
 		margin-top: -56px
 		.rules
-			margin-top: 30px
+			margin-top: 29px
 	.btn-wrapper
 		.btn
 			padding: 22px 53px
