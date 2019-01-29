@@ -1,19 +1,23 @@
-Creating a site cards in which the user can create a card and send it to social networks.
+<h3>Creating a site cards in which the user can create a card and send it to social networks.</h3>
 
-Development tools:
-Js/jQuery
-PHP
-HTML
-CSS/SASS
-Ajax
-Browser Cookie
+<h4>Development tools:</h4>
+<ul>
+  <li>Js/jQuery</li>Js/jQuery
+  <li>PHP</li>
+  <li>HTML</li>
+  <li>CSS/SASS</li>
+  <li>Ajax</li>
+  <li>Browser Cookie</li>
+</ul>
 
-Создание сайта открытки, в которой пользователь может создавать открытку и отправлять в социальные сети.
+<h3>Создание сайта открытки, в которой пользователь может создавать открытку и отправлять в социальные сети.</h3>
 
-Инструменты разработки:
-Js/jQuery
-PHP
-HTML
-CSS/SASS
-Ajax
-Browser Cookie
+<h4>Инструменты разработки:</h4>
+<ul>
+  <li>Js/jQuery</li>Js/jQuery
+  <li>PHP</li>
+  <li>HTML</li>
+  <li>CSS/SASS</li>
+  <li>Ajax</li>
+  <li>Browser Cookie</li>
+</ul>
