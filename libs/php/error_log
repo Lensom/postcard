@@ -1,3 +1,0 @@
-[25-Jan-2019 16:51:26 Europe/Minsk] PHP Warning:  include_once(/libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/libs/php/save_new_letter.php on line 2
-[25-Jan-2019 16:51:26 Europe/Minsk] PHP Warning:  include_once(): Failed opening '/libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/libs/php/save_new_letter.php on line 2
-[25-Jan-2019 16:51:26 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/libs/php/save_new_letter.php on line 7

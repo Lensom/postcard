@@ -3,7 +3,6 @@
 include_once "../libs/php/letter_class.php";
 
 $letter = new Letter();
-
 try{
     $all_letters = $letter->getAllLetters();
 }
@@ -29,6 +28,7 @@ catch (Exception $e)
 <?php foreach($all_letters as $letter):?>
 <?php
     $letter_data = json_decode($letter['letter_data']);
+    
 ?>
 
 <form action="remove_letter.php" method="POST" style="margin: 0; margin-top: -5px;">

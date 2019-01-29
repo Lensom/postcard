@@ -32,7 +32,10 @@ class Letter
         "slot slot-25 slot-xxs",
         "slot slot-26 slot-xxs",
         "slot slot-27 slot-xxs",
-        "slot slot-29 slot-xxs"
+        "slot slot-29 slot-xxs",
+        "slot slot-30 slot-l",
+        "slot slot-31 slot-xs",
+        "slot slot-32 slot-xs"
     );
 
     protected $user_name;
@@ -42,9 +45,9 @@ class Letter
 
     protected $dbconfig = array(
         'host'=>'localhost',
-        'user'=>'root',
-        'password'=>'',
-        'dbname'=>'postcard',
+        'user'=>'pechkine_let',
+        'password'=>'fg3tg42gjk',
+        'dbname'=>'pechkine_letters',
     );
     protected $db;
 
@@ -90,7 +93,7 @@ class Letter
     }
     public function getAllLetters()
     {
-        $q_str = 'select * from letters order by desc';
+        $q_str = 'select * from letters order by id desc';
 
         try{
             $prepare = $this->db->prepare($q_str);
