@@ -341,12 +341,12 @@ if(getMessage && getSticker && getBackground) {
 // Ajax запросы
 function take_post(){
 	var myPostcard = {
-		background: getBackground,
-		message: getMessage,		
-		sticker: getSticker,
-		colorText: getColorText,
-		posLeft: getPosLeft,
-		posTop: getPosTop
+		background: getBackground.replace(/<\/?[^>]+>/g,''),
+		message: getMessage.replace(/<\/?[^>]+>/g,''),		
+		sticker: getSticker.replace(/<\/?[^>]+>/g,''),
+		colorText: getColorText.replace(/<\/?[^>]+>/g,''),
+		posLeft: getPosLeft.replace(/<\/?[^>]+>/g,''),
+		posTop: getPosTop.replace(/<\/?[^>]+>/g,'')
 	}
 
 	var data = {
