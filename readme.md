@@ -1,4 +1,4 @@
-<h3>Creating a site cards in which the user can create a card and send it to social networks.</h3>
+<h3>Creating a site postcards in which the user can create a postcard for holiday of all lovers (14 february) and send it to social networks.</h3>
 
 <h4>Development tools:</h4>
 <ul>
