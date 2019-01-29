@@ -2,7 +2,7 @@
 
 <h4>Development tools:</h4>
 <ul>
-  <li>Js/jQuery</li>Js/jQuery
+  <li>Js/jQuery</li>
   <li>PHP</li>
   <li>HTML</li>
   <li>CSS/SASS</li>
@@ -14,7 +14,7 @@
 
 <h4>Инструменты разработки:</h4>
 <ul>
-  <li>Js/jQuery</li>Js/jQuery
+  <li>Js/jQuery</li>
   <li>PHP</li>
   <li>HTML</li>
   <li>CSS/SASS</li>
