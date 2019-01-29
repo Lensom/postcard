@@ -55,7 +55,7 @@ $random_letters = $letter->getRandomLetters();
                     <?php foreach($letter->slot_array as $slot):?>
                     <div class="<?=$slot;?>">
                         <?php
-                                    $rand_row = rand(0,29);
+                                    $rand_row = rand(0,32);
                                     $rand_text = json_decode($random_letters[$rand_row]['letter_data']);
                                     $rand_name = $random_letters[$rand_row]['user_name'];
                         ?>
