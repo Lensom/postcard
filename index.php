@@ -1,31 +1,32 @@
-<?php
-include_once 'libs/php/letter_class.php';
-
-$letter = new Letter();
-
-$random_letters = $letter->getRandomLetters();
-?>
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>dostavka.by онлайн-гипермаркет</title>
-    <meta name="description" content="dostavka.by онлайн-гипермаркет">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#000">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#000">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.min.css">
+   <head>
+      <meta charset="utf-8">
+      <title>dostavka.by Онлайн-гипермаркет.</title>
+      <meta name="description" content="dostavka.by Онлайн-гипермаркет.">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+      <!-- Chrome, Firefox OS and Opera -->
+      <meta name="theme-color" content="#000">
+      <!-- Windows Phone -->
+      <meta name="msapplication-navbutton-color" content="#000">
+      <!-- iOS Safari -->
+      <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+      <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <link rel="stylesheet" href="css/main.min.css">
+      <link rel="canonical" href="http://loveletters.by/">
+      <meta property="og:url"           content="http://loveletters.by/" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="Онлайн-гипермаркет dostavka.by" />
+      <meta property="og:description"   content="Создай свою уникальную валентинку и выиграй что-то очень крутое!" />
+      <meta property="og:image"         content="http://loveletters.by/img/share.jpg" />
+      <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
     <script>
         function setCookie (name, value, expires, path, domain, secure) {
                 document.cookie = name + "=" + escape(value) +
