@@ -1,0 +1,27 @@
+[25-Jan-2019 12:53:13 Europe/Minsk] PHP Warning:  Illegal string offset 'user_name' in /home/pechkine/loveletters.by/index.php on line 19
+[25-Jan-2019 12:54:53 Europe/Minsk] PHP Warning:  Illegal string offset 'user_name' in /home/pechkine/loveletters.by/index.php on line 20
+[25-Jan-2019 12:55:35 Europe/Minsk] PHP Warning:  Illegal string offset 'user_phone' in /home/pechkine/loveletters.by/index.php on line 20
+[25-Jan-2019 12:55:45 Europe/Minsk] PHP Warning:  Illegal string offset 'user_name' in /home/pechkine/loveletters.by/index.php on line 19
+[25-Jan-2019 13:46:51 Europe/Minsk] PHP Fatal error:  Call to protected method Letter::getData() from context '' in /home/pechkine/loveletters.by/index.php on line 114
+[25-Jan-2019 13:47:26 Europe/Minsk] PHP Fatal error:  Call to protected method Letter::getData() from context '' in /home/pechkine/loveletters.by/index.php on line 115
+[25-Jan-2019 14:58:30 Europe/Minsk] PHP Warning:  preg_match(): Delimiter must not be alphanumeric or backslash in /home/pechkine/loveletters.by/index.php on line 171
+[25-Jan-2019 14:59:14 Europe/Minsk] PHP Warning:  preg_match(): Unknown modifier 'g' in /home/pechkine/loveletters.by/index.php on line 171
+[25-Jan-2019 15:23:27 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:36 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:38 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:38 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:38 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:39 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:41 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:23:41 Europe/Minsk] PHP Parse error:  syntax error, unexpected end of file in /home/pechkine/loveletters.by/index.php on line 307
+[25-Jan-2019 15:27:23 Europe/Minsk] PHP Fatal error:  Call to protected method Letter::getRandomLetters() from context '' in /home/pechkine/loveletters.by/index.php on line 3
+[25-Jan-2019 16:39:30 Europe/Minsk] PHP Fatal error:  Cannot use object of type stdClass as array in /home/pechkine/loveletters.by/index.php on line 46
+[25-Jan-2019 16:51:38 Europe/Minsk] PHP Warning:  include_once(letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:51:38 Europe/Minsk] PHP Warning:  include_once(): Failed opening 'letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:51:38 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/save_new_letter.php on line 7
+[25-Jan-2019 16:52:19 Europe/Minsk] PHP Warning:  include_once(/libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:52:19 Europe/Minsk] PHP Warning:  include_once(): Failed opening '/libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:52:19 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/save_new_letter.php on line 7
+[25-Jan-2019 16:52:27 Europe/Minsk] PHP Warning:  include_once(/libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:52:27 Europe/Minsk] PHP Warning:  include_once(): Failed opening '/libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/save_new_letter.php on line 2
+[25-Jan-2019 16:52:27 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/save_new_letter.php on line 7

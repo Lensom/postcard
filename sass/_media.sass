@@ -23,27 +23,21 @@
 	.slot-xxl
 		.card-v
 			transform: scale(.4) translate(-50%, -50%)
-
 	.slot-xl
 		.card-v
 			transform: scale(.35) translate(-50%, -50%)
-
 	.slot-l
 		.card-v
 			transform: scale(.25) translate(-50%, -50%)
-
 	.slot-m
 		.card-v
 			transform: scale(.2) translate(-50%, -50%)
-
 	.slot-s
 		.card-v
-			transform: scale(.14) translate(-50%, -50%)
-			
+			transform: scale(.14) translate(-50%, -50%)			
 	.slot-xs
 		.card-v
-			transform: scale(.1) translate(-50%, -50%)
-		
+			transform: scale(.1) translate(-50%, -50%)		
 	.slot-xxs
 		.card-v
 			transform: scale(.1) translate(-50%, -50%)
@@ -68,7 +62,6 @@
 					.second-etap
 						&:after
 							right: -21px
-
 	
 	.last-main
 		.last-page
@@ -97,8 +90,11 @@
 	
 	.page-3
 		.right-side
-			margin-left: 28px
+			padding-left: 28px
 			.input-wrapper
+				// margin-top: 0
+				label
+					margin-bottom: 20px
 				label[for=phone]
 					top: 0
 					img 
@@ -110,13 +106,34 @@
 					max-width: 252px
 			.text-block 
 				p 
+					margin-bottom: 0
 					br 
 						display: none
 		.left-side
 			padding-right: 92px
 
 	.required
-		left: -10px
+		left: -10px	
+	span.repeat-phone
+		left: 0
+	.wrapp
+		.rules
+			margin-top: 0
+			padding-bottom: 30px
+	
+	.right-side
+		.rules
+			margin: 144px 27px 30px 0
+	button.slick-next.slick-arrow
+		top: auto
+		bottom: -16%
+		right: 47%
+		width: 12px
+	button.slick-prev.slick-arrow
+		top: auto
+		bottom: -16%
+		left: 44%
+		width: 12px
 	
 
 /* Medium Devices, Desktops */
@@ -136,6 +153,7 @@
 					margin-top: 70px
 				.rules
 					margin: 30px 0
+					margin-top: 15px
 					text-align: center
 				.btn.btn-submit
 					margin-left: 0
@@ -150,7 +168,7 @@
 				.show-more
 					position: relative
 					display: inline-block
-					margin-top: -100px
+					margin-top: 0
 					left: auto
 				.slots
 					height: 65vh
@@ -294,6 +312,8 @@
 			margin-top: 20px
 			.text-block
 				text-align: center
+				.multiple-items
+					padding-bottom: 27px
 				h2 
 					text-align: center
 	.color-edit
@@ -314,7 +334,10 @@
 
 	.page-3
 		.right-side
+			padding-left: 0
 			.input-wrapper
+				margin-top: 10px
+				padding-left: 0
 				label[for=phone]
 					margin: 0 15px
 		.wrapp 
@@ -324,6 +347,20 @@
 			margin: 0 auto
 	.wrapp
 		padding-bottom: 30px
+		.btn-wrapper
+			margin-top: 30px
+	.wrap-logo
+		text-align: center
+		a.logotype
+			padding-right: 0
+	
+	button.slick-next.slick-arrow
+		bottom: 8%
+		right: 47.3%
+	button.slick-prev.slick-arrow
+		bottom: 8%
+		left: 46.7%
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 640px)
@@ -349,6 +386,9 @@
 			width: 500px
 			max-width: 100%
 			overflow: hidden
+			margin: 0 auto
+			margin-top: -50px
+			margin-bottom: -50px
 			.card-v
 				transform: scale(.8) translate(12.5%, 12.5% )
 	
@@ -385,6 +425,13 @@
 							right: 54px
 							transform: rotate(90deg)
 	
+	button.slick-next.slick-arrow
+		bottom: 8%
+		right: 40%
+	button.slick-prev.slick-arrow
+		bottom: 8%
+		left: 40%
+	
 	.modal-content
 		padding: 45px 15px
 	
@@ -418,7 +465,9 @@
 		.right-side
 			.input-wrapper
 				label[for=phone]
-					margin-bottom: 6px
+					margin-bottom: 20px
+				label
+					margin-bottom: 20px
 
 
 /* Extra Small Devices, Phones */
@@ -436,7 +485,7 @@
 			width: 400px
 			a.common 
 				position: absolute
-				margin-top: 24%
+				margin-top: 15%
 			.card-v
 				margin-top: 100px
 				margin-left: 0
@@ -491,7 +540,7 @@
 	.greeting
 		.active
 			.card-v
-				transform: scale(.62) translate(-50%,-15%) !important
+				transform: scale(.62) translate(-50%,-50%) !important
 	
 	.last-main
 		.sides.last-page

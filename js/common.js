@@ -1,5 +1,38 @@
 $(document).ready(function(){
-	
+
+
+// Количество символов в каждой открытке
+
+function colSymbols() {
+	$('.text-card').each(function(indx, element){
+		var textSize = $(this).text()
+		if (textSize.length <= 50) {
+			$(this).css('font-size', '18px')
+		} else if (textSize.length >= 50 && textSize.length <=130) {
+			$(this).css('font-size', '16px')
+		} else if (textSize.length >= 131 && textSize.length <=200) {
+			$(this).css('font-size', '14px')
+		} else {
+			$(this).css('font-size', '12px')
+		}
+	});	
+}
+ 
+// Клик на открытку
+
+function openPostcard() {
+	$('.card-v').on('click', function(e){	
+		if ($(this).closest('.slot').hasClass('my-card')) {
+			return false;
+		} else if (!$(this).closest('.slot').hasClass('active')) {
+			$('.slot').removeClass('active');	
+			$(this).closest('.slot').addClass('active');
+		} else {
+			$('.slot').removeClass('active');
+		}				
+	})
+}
+
 // Счетчик количества символов в textarea, span alert
 
 $("textarea").keyup(function() {
@@ -28,22 +61,11 @@ $("textarea").keyup(function() {
 			$('.text-card').css('font-size', '12px')
 		}
 
+		// Вывод в параграф
+
 		$(".text-card").text(count);
 	return false;
 });
-
-// Клик на открытку
-
-$('.card-v').on('click', function(e){	
-	if ($(this).closest('.slot').hasClass('my-card')) {
-		return false;
-	} else if (!$(this).closest('.slot').hasClass('active')) {
-		$('.slot').removeClass('active');	
-		$(this).closest('.slot').addClass('active');
-	} else {
-		$('.slot').removeClass('active');
-	}				
-})
 
 //  slick slider
 
@@ -53,7 +75,29 @@ $(".multiple-items").slick({
 	infinite: true,
 	slidesToShow: 5,
 	slidesToScroll: 1,
-	variableWidth: true
+	variableWidth: true,
+	responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+				dots: false,
+				infinite: true,
+        slidesToShow: 3,
+				slidesToScroll: 3,
+				variableWidth: true,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+				dots: false,
+				infinite: true,
+        slidesToShow: 2,
+				slidesToScroll: 2,
+				variableWidth: true,
+      }
+    }
+  ]
 	
 });
 // Слайдер для choose-3
@@ -112,8 +156,10 @@ $('.tab').on('click', function(){
 	$('.choose').eq($(this).index()).removeClass('hidden')
 })
 
+
 $('.third-etap').on('click', function(){
 	$('.decor.draggable, .alert-drag').removeClass('hidden')
+	$('.decor.draggable').addClass('decor-3')
 	if (($('textarea').val().length > 10) && ($('.decor.draggable:not(.hidden)'))) {
 		$('.btn.btn-submit').removeAttr('disabled')
 	}
@@ -215,8 +261,8 @@ $('.third-etap').on('click', function(){
 		return(setStr);
 	}
 
-	$('.btn.btn-submit').on('click', function(){
-		myPostcard.message = $('textarea').val();
+	$('.send').on('click', function(){
+		myPostcard.message = $('.text-card').val();
 		myPostcard.posLeft = $('#draggable3').css('left');
 		myPostcard.posTop = $('#draggable3').css('top');
 		myPostcard.colorText = $('.text-card').css('color');
@@ -241,6 +287,8 @@ $('.third-etap').on('click', function(){
 
 		console.log(myPostcard)	
 
+		location.href="step-2.html"
+
 	})
 
 	var getMessage = getCookie("message");		
@@ -250,57 +298,164 @@ $('.third-etap').on('click', function(){
 	var getPosLeft = getCookie("posLeft");
 	var getPosTop = getCookie("posTop");
 
-
-
-	$('#text-card').val(getMessage)
-	$('#textarea').val(getMessage)
-	document.getElementById("text-card").textContent = getMessage;
-
-	
-
-	$('.card-v').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
-	$('.card-v').addClass(getBackground);
-	$('.decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7');
-	$('.decor').removeClass('hidden').addClass(getSticker);
-	$('.decor').css({
+	if(getBackground) {
+		$('#card').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
+		$('#card').addClass(getBackground);
+	} else {
+		$('#card').addClass('bgc6');
+	}
+	// $('.last-decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7');
+	// $('.last-decor').removeClass('hidden').addClass(getSticker);
+	$('.last-decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7 hidden').addClass(getSticker);
+	$('#draggable3').css({
 		'left': getPosLeft,
 		'top' : getPosTop
 	});
+
+		
 	$('.text-card').css('color', getColorText)
+	$("#text-card").text(getMessage);
+	$('#textarea').val(getMessage)
 
-
-
-	if (!getMessage) {
-		$('#textarea').val(getMessage)
-		document.getElementById("text-card").setAttribute('value', ' ');
-	}
-
+	
 	if(getMessage && getSticker && getBackground) {
 		$('.btn.btn-submit').removeAttr('disabled')
 	}
 
+// ajax
+	function take_post(){
+		var myPostcard = {
+			background: getBackground,
+			message: getMessage,		
+			sticker: getSticker,
+			colorText: getColorText,
+			posLeft: getPosLeft,
+			posTop: getPosTop
+		}
+
+		var data = {
+            "user_name" : $('.name').val(),
+            "user_email" : $('.email').val(),
+            "user_phone" : $('.phone').val(),
+            "letter_data" : myPostcard
+        };
+
+		$.post('save_new_letter.php', {data:data}, function(data){
+			console.log(data);
+			if (data.length > 0) {
+				$('.repeat-email').removeClass('hidden');
+				$('.repeat-phone').removeClass('hidden');
+			} else {
+				location.href="last-page.html"
+			}
+		});
+
+	};
 		
-	$('.send').on('click', function() {
-		location.href="/preview/Postcard/page3.html"
-	})
+	$('#form').on('submit', function(e) {
+		e.preventDefault();
+		
+		var email = $('.email').val();
+		var phone = $('.phone').val();
+		var name = $('.name').val();
 
-	$('.ready').on('click', function() {
-		if ($('.email').length < 4) {
-			$('.email').addClass('error')
-			// return false
-		} 
-		 if ($('.name').length < 2) {
-			$('.name').addClass('error')
-			// return false
-		}
-		if ($('.phone').length < 4) {
-			$('.phone').addClass('error')
-			// return false
+		function validateEmail(email) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+	}
+
+	function validatePhone(phone) {
+		var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+		return re.test(String(phone));
+}
+		
+		if (!name.length) {
+			$('.name').addClass('error');
 		} else {
-			location.href="/last-page.html"
+			$('.name').removeClass('error');
 		}
+		if (!validatePhone(phone)) {
+			$('.phone').addClass('error');
+		} else {
+			$('.phone').removeClass('error');
+		}
+		if (!validateEmail(email)) {
+			$('.email').addClass('error');
+		} else {
+			$('.email').removeClass('error');
+		}
+
+		if (name.length && validatePhone(phone) && validateEmail(email)) {
+			take_post();
+		} else {
+			$('.repeat-email').addClass('hidden');
+			$('.repeat-phone').addClass('hidden');
+		}
+		
 	})
 
+	!function (d, id, did, st, title, description, image) {
+		var js = d.createElement("script");
+		js.src = "https://connect.ok.ru/connect.js";
+		js.onload = js.onreadystatechange = function () {
+		if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+			if (!this.executed) {
+				this.executed = true;
+				setTimeout(function () {
+					OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+				}, 0);
+			}
+		}};
+		d.documentElement.appendChild(js);
+	}(document,"ok_shareWidget",document.URL,'{"sz":12,"st":"oval","nc":1,"nt":1}',"Онлайн-гипермаркет dostavka.by","Создай свою уникальную валентинку и выиграй что-то очень крутое!","http://loveletters.by/img/share.jpg");
+
+
+	$('.show-more').on('click', function(){
+		$.post('download_more_letters.php', {data: {}}, function(data){
+			var html = $(data);
+			$('.slots-s').html(html);
+			colSymbols();	
+			openPostcard();
+		});
+	})
+
+	function setLetters() {		
+		$.post('download_more_letters.php', {data: {}}, function(data){
+			var html = $(data);
+			$('.slots-s').html(html);			
+			colSymbols();
+			openPostcard();
+	})
+}
+	setLetters();
+
+// twitter
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 	
+
+	function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
+}
+
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+}
+
+init()
 
 }) 

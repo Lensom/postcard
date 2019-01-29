@@ -58,7 +58,7 @@ img
 
 // Ссылки
 a.common
-	display: block
+	display: inline-block
 	font-family: Rubik, sans-serif
 	font-style: normal
 	font-weight: normal
@@ -66,11 +66,12 @@ a.common
 	font-size: 20px
 	color: #A163F5
 	position: relative
-	border-bottom: 2px dashed transparent
+	text-decoration: none
+	border-bottom: 2px dashed #A163F5
 	&:hover
 		color: #A163F5
 		text-decoration: none
-		border-bottom: 2px dashed #A163F5
+		border-bottom: 2px dashed transparent
 a.common.show-more
 	&:before
 		content: ''
@@ -103,6 +104,7 @@ a.edit
 	text-align: center
 	text-transform: uppercase
 	cursor: pointer
+	border: none
 	&:hover
 		text-decoration: none
 		color: #fff
@@ -345,6 +347,37 @@ input.email
 input.error
 	background: #FFD5D5
 	box-shadow: 0px 4px 4px rgba(255, 80, 103, 0.69)
+	color: #222
+	::placeholder
+		color: #222222
+
+span.repeat-email
+	position: absolute
+	background-color: #ed74a9
+	font-size: 10px
+	display: inline-block
+	top: 48px
+	padding: 0 5px
+	border-radius: 6px
+	font-family: Rubik, sans-serif
+	color: #fff
+	height: 21px
+
+span.repeat-phone
+	position: absolute
+	background-color: #ed74a9
+	font-size: 10px
+	display: inline-block
+	top: 48px
+	padding: 0 5px
+	border-radius: 6px
+	font-family: Rubik, sans-serif
+	color: #fff
+	height: 21px
+	left: 30px
+
+	
+
 
 .wrapper
 	width: 1230px
@@ -471,8 +504,7 @@ input.error
 					left: 9%
 
 a.logotype 
-	display: block
-	text-align: right
+	display: inline-block
 	padding-top: 72px
 	padding-right: 27px
 .right-side
@@ -514,12 +546,6 @@ a.logotype
 		text-align: right
 		margin-top: 174px
 		margin-right: -1px
-		.common
-			display: inline-block
-			border-bottom: 2px dashed transparent
-			&:hover
-				text-decoration: none
-				border-bottom: 2px dashed #A163F5
 
 @keyframes one
 	0%
@@ -554,7 +580,6 @@ a.logotype
 		left: 0
 		bottom: 0
 		color: #ED74A9
-
 	p 
 		padding: 172px 57px  
 		font-family: Raleway, font-serif
@@ -563,12 +588,15 @@ a.logotype
 		line-height: 15px
 		font-size: 18px
 		text-align: center
+		overflow: hidden
 	.decor
 		width: 85px
 		height: 90px
 		z-index: 10
 		background-size: cover
 		position: absolute
+		top: 20px
+		left: 261px
 
 .bgc1
 	background-image: url(../img/bgc/cardheart.png)
@@ -700,7 +728,7 @@ a.logotype
 .constructor
 	background-image: url(../img/page2bgc.png)
 	background-size: cover
-	height: 100vh
+	min-height: 100vh
 	.etaps
 		display: flex
 		justify-content: space-between
@@ -854,26 +882,55 @@ button.slick-prev.slick-arrow
 	z-index: 99
 
 .etaps
+	.decor
+		background-position: 50%
 	.decor-1
-		width: 200px
+		width: 185px
 		height: 200px
 	.decor-2
-		width: 150px
+		width: 144px
 		height: 150px
 	.decor-3
-		width: 200px
+		width: 172px
 		height: 200px
 	.decor-4
-		width: 200px
+		width: 161px
 		height: 200px
 	.decor-5
-		width: 150px
+		width: 88px
 		height: 150px
 	.decor-6
 		width: 206px
-		height: 206px
+		height: 82px
 	.decor-7
-		width: 150px
+		width: 115px
+		height: 150px
+	
+
+.card-v.center
+	.decor
+		background-position: 50%
+		transform: scale(1)
+	.decor-1
+		width: 185px
+		height: 200px
+	.decor-2
+		width: 144px
+		height: 150px
+	.decor-3
+		width: 172px
+		height: 200px
+	.decor-4
+		width: 161px
+		height: 200px
+	.decor-5
+		width: 88px
+		height: 150px
+	.decor-6
+		width: 206px
+		height: 82px
+	.decor-7
+		width: 115px
 		height: 150px
 
 .hidden
@@ -889,10 +946,6 @@ button.slick-prev.slick-arrow
 		margin-right: 27px
 		.common
 			display: inline-block
-			border-bottom: 2px dashed transparent
-			&:hover
-				text-decoration: none
-				border-bottom: 2px dashed #A163F5
 	.btn-wrapper
 		margin-top: 9px
 
@@ -925,7 +978,6 @@ button.slick-prev.slick-arrow
 			margin-left: 87px
 			margin-top: -37px
 	.right-side
-		margin-left: 60px
 		.text-block
 			margin: 0
 			text-align: left
@@ -953,10 +1005,12 @@ button.slick-prev.slick-arrow
 				margin-right: 15px
 				width: 55px
 				height: 55px
-				font-size: 12px
+				font-size: 12px			
+
 				img 
-					width: 18px
 					margin: 0 auto
+				img.facebook 
+					width: 18px
 				img.vk 
 					width: 35px
 				img.odno 
@@ -1018,8 +1072,9 @@ button.slick-prev.slick-arrow
 
 .last-main
 	min-height: 100vh
-	a.logotype
-		text-align: center 
+	.wrap-logo
+		text-align: center
+	a.logotype 
 		padding: 0
 		padding-top: 44px
 		img 
@@ -1033,6 +1088,8 @@ button.slick-prev.slick-arrow
 		margin-top: 21px
 	.sides.last-page
 		background-image: none
+		.decor.draggable
+			pointer-events: none
 		.left-side
 			width: 100%
 			.show-more
@@ -1164,6 +1221,7 @@ button.slick-prev.slick-arrow
 		.text-block
 			text-align: center
 			margin-top: -48px
+			padding-bottom: 30px
 			p 
 				margin-top: 23px
 				margin-bottom: 22px
@@ -1178,5 +1236,87 @@ button.slick-prev.slick-arrow
 				justify-content: center
 				.social-element
 					margin: 0 10px
+
+
+// social 
+.social-element 
+	.vk-link
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+		a 
+			z-index: 9999
+			opacity: 0
+			width: 100%
+			height: 100%
+	.ok-link
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+	.fb-icon
+		// position: relative
+		position: absolute
+		z-index: 9999
+		height: 100%
+		width: 100%
+		overflow: hidden
+		.fb-share-button 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			opacity: 0.0001
+			z-index: 100
+			iframe 
+				position: absolute
+				top: 0
+				left: 0
+				width: 100% !important
+				height: 100% !important
+				display: block
+				transform: scale(10)
+				transform-origin: top left
+	#ok_shareWidget
+		position: relative
+		width: 100%
+		height: 100%
+		overflow: hidden
+		z-index: 100
+		iframe 
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			transform: scale(10)
+			opacity: 0.0001
+			z-index: 1000
+			transform-origin: top left
+	.tw-icon
+		position: absolute
+		z-index: 100
+		height: 100%
+		width: 100%
+		overflow: hidden
+		iframe 
+			position: absolute
+			opacity: 0.0001
+			z-index: 1000
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0	
+			transform: scale(10)
+			transform-origin: top left
+
+
+
+.wrap-logo
+	text-align: right
 
 @import "media" // Всегда в конце
