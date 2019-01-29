@@ -8,7 +8,16 @@
   <li>CSS/SASS</li>
   <li>Ajax</li>
   <li>Browser Cookie</li>
+  <li>Gulp</li>
 </ul>
+
+<h4>Start:</h4>
+<p>Inside folder "src":</p>
+<ul>
+  <li>npm i</li>
+  <li>gulp</li>
+</ul>
+<hr>  
 
 <h3>Создание сайта открытки, в которой пользователь может создавать открытку и отправлять в социальные сети.</h3>
 
@@ -20,4 +29,12 @@
   <li>CSS/SASS</li>
   <li>Ajax</li>
   <li>Browser Cookie</li>
+  <li>Gulp</li>
+</ul>
+
+<h4>Запуск проекта:</h4>
+<p>Внутри папки "src":</p>
+<ul>
+  <li>npm i</li>
+  <li>gulp</li>
 </ul>
