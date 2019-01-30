@@ -146,7 +146,6 @@ $('.tab-active').on('click', function(e){
 	$(this).removeClass('tab-non-active');
 });
 
-
 // Переключатели этапов открытки
 $('.tab-active').on('click', function(e){
 	e.preventDefault();
@@ -205,69 +204,6 @@ $('.dec').on('click', function(e){
 	alertHidden();
 	return false;
 });
-
-// $('.dec').on('click', function(e){	
-// 	var text = '<div style="left: 150px; top: 100px;" class="decor draggable ui-widget-content last-decor ui-draggable ui-draggable-handle"></div>'
-// 	var decor = $(text);
-// 	decor.addClass('decor-' + $(this).index())
-// 	console.log(decor);
-// 	$('#card').append(decor);
-// 	// $(this).parent().find('.dec').removeClass('active');
-// 	// $(this).addClass('active');
-// 	dragContainer()
-// 	return false;
-// });
-
-// $('.d-1').on('click', function(){
-// 	$('.decor').addClass('decor-1');
-// });
-// $('.d-2').on('click', function(){
-// 	$('.decor').addClass('decor-2');
-// });
-// $('.d-3').on('click', function(){
-// 	$('.decor').addClass('decor-3');
-// });
-// $('.d-4').on('click', function(){
-// 	$('.decor').addClass('decor-4');
-// });
-// $('.d-5').on('click', function(){
-// 	$('.decor').addClass('decor-5');
-// });
-// $('.d-6').on('click', function(){
-// 	$('.decor').addClass('decor-6');
-// });
-// $('.d-7').on('click', function(){
-// 	$('.decor').addClass('decor-7');
-// });
-
-// $('.dec').on('click', function(e){	
-// 	$('.decor').removeClass('decor-1 decor-2 decor-3 decor-4 decor-5 decor-6 decor-7');
-// 	$(this).parent().find('.dec').removeClass('active');
-// 	$(this).addClass('active');
-// 	return false;
-// });
-
-// $('.d-1').on('click', function(){
-// 	$('.decor').addClass('decor-1');
-// });
-// $('.d-2').on('click', function(){
-// 	$('.decor').addClass('decor-2');
-// });
-// $('.d-3').on('click', function(){
-// 	$('.decor').addClass('decor-3');
-// });
-// $('.d-4').on('click', function(){
-// 	$('.decor').addClass('decor-4');
-// });
-// $('.d-5').on('click', function(){
-// 	$('.decor').addClass('decor-5');
-// });
-// $('.d-6').on('click', function(){
-// 	$('.decor').addClass('decor-6');
-// });
-// $('.d-7').on('click', function(){
-// 	$('.decor').addClass('decor-7');
-// });
 
 // jqueryUi drag-n-drop для телефона
 function touchHandler(event) {
