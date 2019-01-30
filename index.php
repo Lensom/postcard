@@ -1,12 +1,20 @@
+<?php
+include_once "libs/php/letter_class.php";
+
+$letter = new Letter();
+
+$random_letters = $letter->getRandomLetters();
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
    <head>
       <meta charset="utf-8">
-      <title>dostavka.by Онлайн-гипермаркет.</title>
+      <title>Создай свою валентинку</title>
       <meta name="description" content="dostavka.by Онлайн-гипермаркет.">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+      <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
       <!-- Chrome, Firefox OS and Opera -->
       <meta name="theme-color" content="#000">
       <!-- Windows Phone -->
