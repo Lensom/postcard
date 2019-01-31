@@ -34,7 +34,6 @@ $random_letters = $letter->getRandomLetters();
       <meta property="og:title"         content="Онлайн-гипермаркет dostavka.by" />
       <meta property="og:description"   content="Создай свою уникальную валентинку и выиграй что-то очень крутое!" />
       <meta property="og:image"         content="http://loveletters.by/img/share.jpg" />
-      <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
     <script>
         function setCookie (name, value, expires, path, domain, secure) {
                 document.cookie = name + "=" + escape(value) +
