@@ -18,7 +18,9 @@ $random_letters = $letter->getRandomLetters();
 
                 <?= strip_tags($rand_text->message);?>
             </p>
-            <div style="top: <?=$rand_text->posTop;?>; left: <?=$rand_text->posLeft;?>" class="decor <?=$rand_text->sticker;?>"></div>
+            <?php foreach($rand_text->stickers as $sticker):?>
+                <div style="top: <?=$sticker->stickerPosTop;?>; left: <?=$sticker->stickerPosLeft;?>" class="decor <?=$sticker->sticker;?>"></div>
+            <?php endforeach;?>
         </div>
     </div>
 <?php $row ++;?>

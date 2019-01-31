@@ -42,7 +42,7 @@ $(document).mouseup(function (e){
 // Счетчик количества символов в textarea для скрытие alert и disabled button submit
 function alertHidden() {
 	var textVal = $("textarea").val();
-	if (($('textarea').val().length > 10) && ($(".card-v .decor").length > 0))  {
+		if (($('textarea').val().length > 10) && ($(".card-v .decor").length > 0))  {
 		$('.alert-span').hide();
 		$('.btn.btn-submit').prop('disabled', false)
 	} else if (($('textarea').val().length > 10))  {
@@ -107,7 +107,6 @@ $(".multiple-items").slick({
 	
 });
 
-
 // backround choose-1 
 $('.el').on('click', function(e){
 	e.preventDefault();
@@ -140,11 +139,18 @@ $('.el-6').on('click', function(){
 	$('.card-v').addClass('bgc3');
 });
 
+$('.dec').on('click', function(e){
+	e.preventDefault();
+	$(this).parent().find('.dec').removeClass('active');
+	$(this).addClass('active');
+});
+
 $('.tab-active').on('click', function(e){
 	e.preventDefault();
 	$(this).parent().find('.tab-active').addClass('tab-non-active');
 	$(this).removeClass('tab-non-active');
 });
+
 
 // Переключатели этапов открытки
 $('.tab-active').on('click', function(e){
@@ -163,6 +169,7 @@ $('.second-etap').on('click', function() {
 })
 
 $('.third-etap').on('click', function(){
+	$('.alert-drag').removeClass('hidden')
 	alertHidden();
 })
 
@@ -193,52 +200,41 @@ $('.color').on('click', function(e){
 function dragContainer() {
 	$( ".decor" ).draggable({ containment: ".card-v", scroll: false })
 }
+function hideDecor() {
+	$( ".last-decor" ).dblclick(function() {
+		$(this).detach();
+	});
+}
+
 
 $('.dec').on('click', function(e){
 	var preText = $('.card-v').html()
 	var index = parseInt($(this).attr('class').match(/d-\d/)[0].match(/\d/)[0]);
 	var text = preText + '<div style="left: 150px; top: 100px;" class="decor decor-'+index+' draggable ui-widget-content last-decor ui-draggable ui-draggable-handle"></div>'
-	$('.card-v').html(text)
+	if ($('.card-v').find('.decor').hasClass('decor-' + index)) {
+		// $('.decor .decor-' + index).detach();
+	$('.decor.draggable.ui-widget-content.last-decor.ui-draggable.ui-draggable-handle.decor-' + index).detach()
+
+	} else {
+		$('.card-v').html(text)
+	}	
 	
 	dragContainer()
 	alertHidden();
+	hideDecor();
 	return false;
 });
 
-// jqueryUi drag-n-drop для телефона
-function touchHandler(event) {
-	var touch = event.changedTouches[0];
 
-	var simulatedEvent = document.createEvent("MouseEvent");
-			simulatedEvent.initMouseEvent({
-			touchstart: "mousedown",
-			touchmove: "mousemove",
-			touchend: "mouseup"
-	}[event.type], true, true, window, 1,
-			touch.screenX, touch.screenY,
-			touch.clientX, touch.clientY, false,
-			false, false, false, 0, null);
-
-	touch.target.dispatchEvent(simulatedEvent);
-}
-
-function init() {
-    document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);
-}
-init()
 
 // Сохранение данных открытки пользователя
 var myPostcard = {
 	background: '',
 	message: '',		
-	sticker: '',
 	colorText: '',
-	posLeft: '',
-	posTop: ''
+	stickers: []
 };
+
 
 function setCookie (name, value, expires, path, domain, secure) {
 	document.cookie = name + "=" + escape(value) +
@@ -269,9 +265,17 @@ function getCookie(name) {
 }
 
 $('.send').on('click', function(){
-	myPostcard.message = $('.text-card').val();
-	myPostcard.posLeft = $('.decor').css('left');
-	myPostcard.posTop = $('.decor').css('top');
+	function setCookie (name, value, expires, path, domain, secure) {
+		document.cookie = name + "=" + escape(value) +
+				((expires) ? "; expires=" + expires : "") +
+				((path) ? "; path=" + path : "") +
+				((domain) ? "; domain=" + domain : "") +
+				((secure) ? "; secure" : "");
+}
+var two = document.cookie.split(';');
+while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:00:00 GMT", "/"); 
+
+	myPostcard.message = $('.text-card').text();
 	myPostcard.colorText = $('.text-card').css('color');
 	var bgcList = $('#card').attr('class').split(/\s+/);
 	var decorList = $('.decor')
@@ -281,7 +285,6 @@ $('.send').on('click', function(){
 			var arr = item.attr('class').split(/\s+/);
 			arr.forEach(element => {
 				if (element == 'decor-1'|| element == 'decor-2'|| element == 'decor-3'|| element == 'decor-4'|| element == 'decor-5'|| element == 'decor-6'|| element == 'decor-7') {
-					myPostcard.sticker = element;
 					setCookie("sticker" + i, element , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 					setCookie("stickerPosLeft" + i, item.css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 					setCookie("stickerPosTop" + i, item.css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
@@ -289,32 +292,44 @@ $('.send').on('click', function(){
 			});			
 		}
 	)
-
 	$.each(bgcList, function(index, item) {
 			if (item == 'bgc1'|| item == 'bgc2' || item == 'bgc3' || item == 'bgc4' || item == 'bgc5' || item == 'bgc6') {
 					myPostcard.background = item;
 					setCookie("background", item , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 			}
 	});
+	$('.decor').each(function(i){
+		var obj = {};
+		var top = $(this).css('top');
+		var left = $(this).css('left');
+		obj.posTop = top;
+		obj.posLeft = left;
+		var classSticker = $(this).attr('class').split(/\s+/);
+		classSticker.forEach(element => {
+			if (element == 'decor-1'|| element == 'decor-2'|| element == 'decor-3'|| element == 'decor-4'|| element == 'decor-5'|| element == 'decor-6'|| element == 'decor-7') {
+				obj.sticker = element;
+	
+			}	
+		});
+		myPostcard.stickers.push(obj);
+	})
+	
 	
 	setCookie("message", $('textarea').val() , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 	setCookie("posTop", $('.decor').css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 	setCookie("posLeft", $('.decor').css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 	setCookie("colorText", $('.text-card').css('color') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 
-	console.log(myPostcard)	
 
 	location.href="step-2.html"
 
 })
 
+
 var getMessage = getCookie("message");		
 var getBackground = getCookie("background");
 var getColorText = getCookie("colorText");
-
 var getSticker = getCookie("sticker");
-var getPosLeft = getCookie("posLeft");
-var getPosTop = getCookie("posTop");
 
 var new_divs=[];
 var cook = document.cookie;
@@ -323,14 +338,12 @@ if (cook.length) {
 	count = cook.match(/stickerPosLeft/g).length;
 }
 for (let index = 0; index < count; index++) {
-	console.log(getCookie("sticker"+index))
 	new_divs.push({
 		sticker:getCookie("sticker"+index),
 		stickerPosLeft:getCookie("stickerPosLeft"+index),
 		stickerPosTop:getCookie("stickerPosTop"+index),
 	})
 }
-console.log(new_divs)
 
 if(getBackground) {
 	$('#card').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
@@ -363,10 +376,8 @@ function take_post(){
 	var myPostcard = {
 		background: getBackground.replace(/<\/?[^>]+>/g,''),
 		message: getMessage.replace(/<\/?[^>]+>/g,''),		
-		sticker: getSticker.replace(/<\/?[^>]+>/g,''),
 		colorText: getColorText.replace(/<\/?[^>]+>/g,''),
-		posLeft: getPosLeft.replace(/<\/?[^>]+>/g,''),
-		posTop: getPosTop.replace(/<\/?[^>]+>/g,'')
+		stickers: new_divs
 	}
 
 	var data = {
@@ -377,7 +388,6 @@ function take_post(){
 			};
 
 	$.post('save_new_letter.php', {data:data}, function(data){
-		console.log(data);
 		if (data.length > 0) {
 			$('.repeat-email').removeClass('hidden');
 			$('.repeat-phone').removeClass('hidden');
@@ -387,6 +397,34 @@ function take_post(){
 	});
 
 };
+
+
+// jqueryUi drag-n-drop для телефона
+function touchHandler(event) {
+	var touch = event.changedTouches[0];
+
+	var simulatedEvent = document.createEvent("MouseEvent");
+			simulatedEvent.initMouseEvent({
+			touchstart: "mousedown",
+			touchmove: "mousemove",
+			touchend: "mouseup"
+	}[event.type], true, true, window, 1,
+			touch.screenX, touch.screenY,
+			touch.clientX, touch.clientY, false,
+			false, false, false, 0, null);
+
+	touch.target.dispatchEvent(simulatedEvent);
+}
+
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+}
+
+init()
+
 
 // Отправка данных пользователя в БД	
 $('#form').on('submit', function(e) {
@@ -406,21 +444,21 @@ $('#form').on('submit', function(e) {
 		return re.test(String(phone));
 	}
 		
-	if (!name.length) {
-		$('.name').addClass('error');
-	} else {
-		$('.name').removeClass('error');
-	}
-	if (!validatePhone(phone)) {
-		$('.phone').addClass('error');
-	} else {
-		$('.phone').removeClass('error');
-	}
-	if (!validateEmail(email)) {
-		$('.email').addClass('error');
-	} else {
-		$('.email').removeClass('error');
-	}
+	// if (!name.length) {
+	// 	$('.name').addClass('error');
+	// } else {
+	// 	$('.name').removeClass('error');
+	// }
+	// if (!validatePhone(phone)) {
+	// 	$('.phone').addClass('error');
+	// } else {
+	// 	$('.phone').removeClass('error');
+	// }
+	// if (!validateEmail(email)) {
+	// 	$('.email').addClass('error');
+	// } else {
+	// 	$('.email').removeClass('error');
+	// }
 
 	if (name.length && validatePhone(phone) && validateEmail(email)) {
 		take_post();
@@ -428,8 +466,37 @@ $('#form').on('submit', function(e) {
 		$('.repeat-email').addClass('hidden');
 		$('.repeat-phone').addClass('hidden');
 	}
+
+	take_post();
 		
 	})
+
+
+	$('.validate').on('input', function() {
+	
+		var email = $('.email').val();
+		var name = $('.name').val();
+		var trigger = false;
+		function validateEmail(email) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		}
+
+		if($('#phone').val().length > 16) {
+			trigger = true;
+			console.log(trigger)
+		}
+
+		console.log($('#phone').val().length)
+
+	
+		if (name.length && validateEmail(email) && trigger) {
+			$('.btn.btn-submit.ready').prop('disabled', false)
+		} else {
+			$('.btn.btn-submit.ready').prop('disabled', true)
+		}
+	});
+
 
 // Кнопка поделиться в соц сеть odnoklassniki
 !function (d, id, did, st, title, description, image) {
@@ -474,5 +541,13 @@ setLetters();
 			fjs.parentNode.insertBefore(js, fjs);
 	}
 }(document, "script", "twitter-wjs");
+
+
+hideDecor();
+alertHidden();
+
+$('.social-element').on('click', function(){
+	console.log('asd')
+})
 
 })
