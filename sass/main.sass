@@ -241,6 +241,7 @@ a.edit
 		animation-iteration-count: infinite
 		animation-delay: 1s
 		animation-direction: alternate
+		position: relative
 		&:hover
 			box-shadow: 0px 4px 4px #E097B7
 
@@ -405,6 +406,8 @@ span.repeat-phone
 				position: absolute
 				bottom: 19.54%
 				left: 30%
+				&.loading
+					opacity: 0.5
 			.slots
 				height: 100vh
 				position: relative
@@ -413,11 +416,16 @@ span.repeat-phone
 					width: 0
 					height: 0	
 					position: absolute
-					transition-property: top, left
-					transition-duration: .5s
+					transition: top 0.4s, left 0.4s, z-index 0.01s 0.4s
+
 					.decor
 						bottom: 20%
 						left: 23%
+					&.active
+						top: 44% 
+						left: 66% 
+						z-index: 111 
+						transition: top 0.4s, left 0.4s, z-index 0.01s
 				.slot-1
 					top: 36%
 					left: 79.2%
@@ -511,14 +519,28 @@ span.repeat-phone
 				.slot-32
 					display: none
 
+@keyframes rotate
+	0%
+	 transform: rotate(0)
+	100%
+		transform: rotate(360deg)
+
+.show-more.loading:before
+	animation: rotate 2s infinite
+
 a.logotype 
 	display: inline-block
 	padding-top: 72px
 	padding-right: 27px
+
 .right-side
+	flex-basis: auto
+	flex-grow: 1
+	flex-shrink: 1
 	margin: 0 28px 0 0
-	position: relative	
-	overflow: hidden
+	position: relative
+	min-width: 0%
+
 	.text-block
 		margin: 112px 0 0 244px
 	h1
@@ -550,6 +572,9 @@ a.logotype
 		animation-direction: alternate
 		color: #fff
 		border: none
+		position: relative
+		z-index: 10
+
 	.rules
 		text-align: right
 		margin-top: 174px
@@ -561,7 +586,13 @@ a.logotype
 	100%
 		transform: scale(1.1)
   
-
+.alert-drag
+	font-weight: 300
+	line-height: 24px
+	font-size: 18px
+	color: #ED74A9
+	text-align: center
+	
 .card-v
 	text-align: center
 	width: 500px
@@ -572,22 +603,18 @@ a.logotype
 	transform-origin: left top 
 	cursor: pointer
 	position: relative
-	transition: transform .5s ease-in
+	transition: transform .3s, opacity 0.3s, z-index 0.001s 0.3s
 	filter: drop-shadow(-20px 20px 25px rgba(158, 82, 90, 0.5))
+	z-index: 1
+	word-break: break-word
+
 	&:hover
-		z-index: 100 !important
-		opacity: 1 !important
+		z-index: 100
+		opacity: 1
 		filter: drop-shadow(-0px 0px 25px #FFFFFF)
-		transform: scale(.6) translate(-50%, -50%) !important 
-	.alert-drag
-		position: absolute
-		font-weight: 300
-		line-height: 16px
-		font-size: 18px
-		width: 100%
-		left: 0
-		bottom: -5px
-		color: #ED74A9
+		transform: scale(.6) translate(-50%, -50%)
+		transition: transform .3s, opacity 0.3s, z-index 0.001s
+
 	p 
 		margin: 0 62px
 		padding: 172px 0  
@@ -602,6 +629,7 @@ a.logotype
 		align-items: center
 		overflow: hidden
 		height: 100%
+
 	.decor
 		width: 85px
 		height: 90px
@@ -642,58 +670,82 @@ a.logotype
 	z-index: 6
 	.card-v
 		transform: scale(.5) translate(-50%, -50%)
+		&:hover
+			transform: scale(.55) translate(-50%, -50%)
+		
 
 .slot-xl
+	z-index: 5 
 	.card-v
-		z-index: 5
 		transform: scale(.45) translate(-50%, -50%)
 		opacity: 1
+		&:hover
+			transform: scale(.5) translate(-50%, -50%)
 
 .slot-l
+	z-index: 4
 	.card-v
-		z-index: 4
 		transform: scale(.35) translate(-50%, -50%)
 		opacity: .8
+		&:hover
+			transform: scale(.4) translate(-50%, -50%)
 
 .slot-m
+	z-index: 3
 	.card-v
-		z-index: 3
 		transform: scale(.3) translate(-50%, -50%)
 		opacity: .6
+		&:hover
+			transform: scale(.35) translate(-50%, -50%)
 
 .slot-s
+	z-index: 2
 	.card-v
-		z-index: 2
 		transform: scale(.24) translate(-50%, -50%)
 		opacity: .4
+		&:hover
+			transform: scale(.28) translate(-50%, -50%)
 		
 .slot-xs
+	z-index: 1
 	.card-v
-		z-index: 1
 		transform: scale(.2) translate(-50%, -50%)
 		opacity: .3
+		&:hover
+			transform: scale(.25) translate(-50%, -50%)
 	 
 .slot-xxs
+	z-index: 0
 	.card-v
-		z-index: 0
 		transform: scale(.15) translate(-50%, -50%)
 		opacity: .3
+		&:hover
+			transform: scale(.2) translate(-50%, -50%)
+
+.slots
+	transform: translateZ(0)
+	z-index: 1
 
 .slot
+	transform: translateZ(0)
 	.decor
     transform: scale(2)
+	
+	.card-v:hover
+	  opacity: 1 
+
+
+	&.active
+		.card-v, .card-v:hover
+			transform: scale(1) translate(-50%, -50%) 
+			opacity: 1 
+			transition: transform .3s, opacity 0.3s, z-index 0.001s
+	  
 
 .my-card
 	.card-v
 		transform: scale(.7) translate(-50%, -50%)
 
-.active
-	top: 44% !important
-	left: 66% !important
-	z-index: 111 !important
-	.card-v
-		transform: scale(1) translate(-50%, -50%) !important
-		opacity: 1 !important
 
 .modal-dialog
 	max-width: 900px
@@ -857,38 +909,36 @@ a.owl-item.slick-slide
 	max-width: 97px
 	outline: none
 
-button.slick-prev.slick-arrow
+button.slick-arrow
 	background-color: transparent
 	border: none
 	position: absolute
+	width: 18px
+	height: 18px
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	background-color: transparent
+	position: absolute
+	top: 39px
+	padding: 0
+	outline: none
+	color: transparent
+	border: none
+	margin: 0 5px 
+	opacity: 0.5 
+	transition: opacity 0.3s 
+
+	&:hover
+		opacity: 1
+
 
 button.slick-next.slick-arrow
 	background-image: url(../img/arrow-right.svg)
-	background-color: transparent
-	background-position: 55% 50%
-	color: transparent
-	border: none
-	width: 33px
-	height: 13px
-	position: absolute
-	right: -39px
-	top: 39px
-	padding: 0
-	outline: none
+	left: 100%
 
 button.slick-prev.slick-arrow
 	background-image: url(../img/arrow-left.svg)
-	background-color: transparent
-	background-position: 110% 50%
-	color: transparent
-	border: none
-	width: 20px
-	height: 13px
-	position: absolute
-	left: -39px
-	top: 39px
-	padding: 0
-	outline: none
+	right: 100%
 
 .ui-widget-content
 	position: relative
@@ -1101,6 +1151,7 @@ button.slick-prev.slick-arrow
 		margin-top: 21px
 	.sides.last-page
 		background-image: none
+		margin-top: 40px
 		.decor.draggable
 			pointer-events: none
 		.left-side
@@ -1261,6 +1312,9 @@ button.slick-prev.slick-arrow
 
 // social 
 .social-element 
+	&.shared
+		opacity: 0.5
+		animation: none
 	.vk-link
 		position: absolute
 		left: 0

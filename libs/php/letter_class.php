@@ -110,6 +110,7 @@ class Letter
     }
     public function getRandomLetters()
     {
+        /*
         $q_str = 'select id from letters order by rand() limit 32';
 
         try{
@@ -131,8 +132,9 @@ class Letter
         }
 
         $idstring = implode(',',$ids);
+        */
 
-        $q_str = 'select user_name,letter_data from letters where id in ('.$idstring.')';
+        $q_str = 'select user_name,letter_data from letters order by rand() limit 32';
         try{
             $prepare = $this->db->prepare($q_str);
             $prepare->execute();

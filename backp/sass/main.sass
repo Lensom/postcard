@@ -1,0 +1,1333 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+
+img
+	height: auto
+	max-width: 100%
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+// Ссылки
+a.common
+	display: inline-block
+	font-family: Rubik, sans-serif
+	font-style: normal
+	font-weight: normal
+	line-height: 26px
+	font-size: 20px
+	color: #A163F5
+	position: relative
+	text-decoration: none
+	border-bottom: 2px dashed #A163F5
+	position: relative
+	z-index: 999
+	&:hover
+		color: #A163F5
+		text-decoration: none
+		border-bottom: 2px dashed transparent
+a.common.show-more
+	&:before
+		content: ''
+		background-image: url(../img/refresh-icon.svg)
+		width: 18px
+		height: 18px
+		position: absolute
+		left: -35px
+		top: 5px
+a.edit 
+	display: inline-block
+	&:before
+		content: ''
+		background-image: url(../img/edit-icon.svg)
+		width: 16px
+		height: 17px
+		position: absolute
+		left: -32px
+		top: 4px
+
+//Кнопки
+
+.btn
+	color: #FFF
+	font-family: 'Rubik', sans-serif
+	font-style: normal
+	font-weight: 500
+	line-height: 18px
+	font-size: 14px
+	text-align: center
+	text-transform: uppercase
+	cursor: pointer
+	border: none
+	&:hover
+		text-decoration: none
+		color: #fff
+.btn-submit
+	line-height: 26px
+	font-size: 20px
+	background: linear-gradient(99.93deg, #A163F5 0%, #ED74A9 100%)
+	box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
+	border-radius: 7px
+	padding: 22px 51px
+	position: relative
+	color: #fff
+	&:after
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 1
+		-webkit-transition: opacity .3s ease-out
+		-o-transition: opacity .3s ease-out
+		transition: opacity .3s ease-out
+		// box-shadow: 0 1.64vw 2.63vw 0 rgba(237, 116, 169, 0.8), inset 0 0 1.1vw 0 rgba(237, 116, 169, 0.8)
+		box-shadow: 0 1.64vw 2.63vw 0 rgba(161, 99, 245, 0.8)
+		border-radius: 6px
+		content: ""
+	&:before
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 1
+		-webkit-transition: opacity .3s ease-out
+		-o-transition: opacity .3s ease-out
+		transition: opacity .3s ease-out
+		box-shadow: -1 .64vw 2.63vw 0 rgba(237, 116, 169, 0.8)
+		border-radius: 6px
+		content: ""
+	&:hover
+		background: linear-gradient(99.93deg, #8F51E2 0%, #DE5C95 100%)
+		box-shadow: 0px 4px 20px rgba(255, 240, 225, 0.2)
+		border-radius: 7px
+.non-active
+	opacity: 0.6
+
+.btn.btn-submit:disabled,
+.btn.btn-submit[disabled]
+	opacity: 0.6
+
+.btn-allow
+	margin-left: 40px
+	font-size: 14px
+	line-height: 18px
+	background: linear-gradient(102.94deg, #F37890 0%, #ED74A9 100%)
+	border-radius: 3px
+	padding: 8px 26px 7px 26px
+	box-shadow: 0px 20px 25px -10px linear-gradient(#F37890 0%, #ED74A9 100%)
+	&:before
+		box-shadow: 0 0 5.28vw 0 rgba(255,218,231,.62), 0 3.7vw 11.09vw 0 #ff0037, inset 0 0 2.64vw 0 rgba(255,124,146,.74)
+	&:after
+		box-shadow: 0 0 2.4vw 0 rgba(255,218,231,.62), 0 1.68vw 5.04vw 0 #ff0037, inset 0 0 1.2vw 0 rgba(255,124,146,.74)
+	&:hover
+		background: linear-gradient(102.94deg, #EA6C85 0%, #E26199 100%)
+		box-shadow: 0px 4px 4px rgba(255, 240, 225, 0.2)
+		border-radius: 3px
+		
+// Вкладки
+
+.tab
+	font-family: Rubik, sans-serif
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	text-align: center
+	border-radius: 6px
+	max-width: 145px
+	display: inline-block
+	padding: 6px 18px
+	&:hover
+		text-decoration: none
+		color: #fff
+	&:focus
+		text-decoration: none
+		color: #fff
+.tab-active	
+	background: #ED74A9
+	box-shadow: 0px 4px 4px #E097B7
+	color: #FFFFFF
+	&:hover
+		background-color: #A163F5
+		box-shadow: 0px 4px 4px #A163F5	
+.tab-non-active
+	color: #DAA0BA
+	background: #F9D5E1
+	box-shadow: 0px 4px 4px rgba(218, 160, 186, 0.5)
+	&:hover
+		color: #DAA0BA
+		color: #fff
+
+// Выбор элемента
+.elements
+	display: flex
+	margin: 25px
+	.element
+		box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+		background: #FFFCF8
+		border-radius: 6px
+		width: 97px
+		height: 97px
+		text-align: center
+		display: flex
+		justify-content: center
+		flex-direction: column  	
+	.element-active
+		border: 3px solid rgba(255, 162, 179, 0.5)
+
+// Соц. сети
+.social-network
+	display: flex
+	.social-element
+		width: 40px
+		height: 40px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		background: #ED74A9		
+		border-radius: 6px
+		animation-name: one
+		animation-duration: 1s
+		animation-iteration-count: infinite
+		animation-delay: 1s
+		animation-direction: alternate
+		&:hover
+			box-shadow: 0px 4px 4px #E097B7
+
+// Цвета
+.color-edit
+	display: flex
+	span
+		font-family: Rubik, sans-serif
+		font-style: normal
+		font-weight: normal
+		line-height: 23px
+		font-size: 18px
+		color: #ED74A9
+	.colors
+		display: flex
+		.color
+			margin-left: 7px
+			width: 21px
+			height: 21px
+			background-color: red
+			border: 2px solid #FFFCF8
+			border-radius: 3px
+			box-shadow: 0px 2px 2px rgba(208, 183, 156, 0.64)
+			&:first-child
+				margin-left: 11px
+		.active
+			box-shadow: 0px 2px 2px rgba(237, 116, 169, 0.5)
+		.gray
+			background: #4B4B4B
+		.green
+			background: #136464
+		.violet
+			background: #564B64
+		.red
+			background: #6B163C
+
+// Формы, инпуты
+
+.text-wrapper
+	position: relative
+	max-width: 526px
+	.counter
+		position: absolute
+		bottom: 11px
+		right: 11px
+		line-height: 16px
+		font-size: 12px
+		color: #FFA2B3
+
+	textarea
+		min-height: 97px
+		min-width: 100%
+		max-width: 526px
+		background: #FFFCF8
+		border: 3px solid #FFFCF8
+		box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+		border-radius: 6px
+		outline: none
+		padding: 10px 19px
+		line-height: 21px
+		font-size: 18px
+		color: #4B4B4B
+		resize: none
+		&:focus
+			outline: none
+			background: #FFFCF8
+			border: 3px solid rgba(255, 162, 179, 0.5)
+
+::placeholder
+	font-family: Rubik, sans-serif
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	color: #D0B79C
+
+input
+	font-family: Rubik, sans-serif
+	font-style: normal
+	font-weight: normal
+	line-height: 23px
+	font-size: 18px
+	background: #FFFCF8
+	box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+	border-radius: 6px
+	outline: none
+	color: #D0B79C
+	padding: 11px 8px 7px 43px
+	height: 44px
+	position: relative
+	max-width: 252px
+	border: none
+	color: #4B4B4B
+	&:focus
+		box-shadow: 0px 4px 4px rgba(237, 116, 169, 0.5)
+input.email
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 19px
+		height: 14px
+		background-image: url(../img/email-icon.svg)	
+		z-index: 9999
+input.error
+	background: #FFD5D5
+	box-shadow: 0px 4px 4px rgba(255, 80, 103, 0.69)
+	color: #222
+	::placeholder
+		color: #222222
+
+span.repeat-email
+	position: absolute
+	background-color: #ed74a9
+	font-size: 10px
+	display: inline-block
+	top: 48px
+	padding: 0 5px
+	border-radius: 6px
+	font-family: Rubik, sans-serif
+	color: #fff
+	height: 21px
+
+span.repeat-phone
+	position: absolute
+	background-color: #ed74a9
+	font-size: 10px
+	display: inline-block
+	top: 48px
+	padding: 0 5px
+	border-radius: 6px
+	font-family: Rubik, sans-serif
+	color: #fff
+	height: 21px
+	left: 30px
+
+.title-width
+	max-width: 717px
+	margin: 0 auto
+
+
+.wrapper
+	width: 1230px
+	margin: 0 auto
+
+// 1 страница
+
+.greeting
+	background-image: url(../img/back-first-page.jpg)
+	background-size: cover
+	.sides
+		display: flex
+		background-image: url(../img/wall1.png)
+		background-repeat: no-repeat
+		background-size: cover
+		background-size: 58%
+		background-position: -1% 11%
+		.left-side
+			width: 693px
+			.show-more
+				position: absolute
+				bottom: 19.54%
+				left: 30%
+			.slots
+				height: 100vh
+				position: relative
+				margin-top: -132px
+				.slot
+					width: 0
+					height: 0	
+					position: absolute
+					transition-property: top, left
+					transition-duration: .5s
+					.decor
+						bottom: 20%
+						left: 23%
+				.slot-1
+					top: 36%
+					left: 79.2%
+					opacity: 1		
+				.slot-2
+					top: 25.7%
+					left: 44%
+				.slot-3
+					top: 49.6%
+					left: 90.2%
+				.slot-4
+					top: 55.2%
+					left: 37.8%
+				.slot-5
+					top: 42%
+					left: 57.5%
+				.slot-6
+					top: 38.4%
+					left: 31.5%
+				.slot-7
+					top: 15.3%
+					left: 51.5%
+				.slot-8
+					top: 23.3%
+					left: 86.6%
+				.slot-9
+					top: 56.3%
+					left: 66%
+				.slot-10
+					top: 64.3%
+					left: 81%
+				.slot-11
+					top: 16.5%
+					left: 101.4%
+				.slot-12
+					top: 48%
+					left: 119.7%			
+				.slot-13
+					top: 38.7%
+					left: 110%		
+				.slot-14
+					top: 60.4%
+					left: 98.3%
+				.slot-15
+					top: 23.8%
+					left: 19.5%
+				.slot-16
+					top: 35.4%
+					left: 10%
+				.slot-17
+					top: 64.5%
+					left: 56%
+				.slot-18
+					top: 28.5%
+					left: 105.7%
+				.slot-19
+					top: 64.5%
+					left: 16.4%
+				.slot-20
+					top: 70.3%
+					left: 65.4%
+				.slot-21	
+					top: 69.4%
+					left: 108.7%
+				.slot-22
+					top: 12.7%
+					left: 23.3%
+				.slot-23
+					top: 7.2%
+					left: 44.7%
+				.slot-24
+					top: 8%
+					left: 99.4%
+				.slot-25
+					top: 33.6%
+					left: 125%
+				.slot-26
+					top: 22.5%
+					left: 114%
+				.slot-27
+					top: 71.2%
+					left: 38.4%
+				.slot-28
+					top: 13%
+					left:	78.6%
+				.slot-29
+					top: 54.7%
+					left: 9%
+				.slot-30,
+				.slot-31,
+				.slot-32
+					display: none
+
+a.logotype 
+	display: inline-block
+	padding-top: 72px
+	padding-right: 27px
+.right-side
+	margin: 0 28px 0 0
+	position: relative	
+	overflow: hidden
+	.text-block
+		margin: 112px 0 0 244px
+	h1
+		font-family: Rubik, sans-serif
+		font-style: normal
+		font-weight: 500
+		line-height: 36px
+		font-size: 28px
+		text-align: center
+		color: #EC4790
+	h2
+		font-family: Rubik, sans-serif
+		font-style: normal
+		font-weight: normal
+		line-height: 26px
+		font-size: 20px
+		text-align: center
+		color: #222222
+		margin-top: 34px
+		margin-bottom: 56px
+	.btn.btn-submit
+		display: inline-block
+		margin-left: 80px
+		padding: 22px 30px
+		animation-name: one
+		animation-duration: 1s
+		animation-iteration-count: infinite
+		animation-delay: 1s
+		animation-direction: alternate
+		color: #fff
+		border: none
+	.rules
+		text-align: right
+		margin-top: 174px
+		margin-right: -1px
+
+@keyframes one
+	0%
+	 transform: scale(1)
+	100%
+		transform: scale(1.1)
+  
+.alert-drag
+	font-weight: 300
+	line-height: 24px
+	font-size: 18px
+	color: #ED74A9
+	text-align: center
+	
+.card-v
+	text-align: center
+	width: 500px
+	height: 500px
+	color: #4B4B4B
+	padding: 20px 39px
+	background-size: cover
+	transform-origin: left top 
+	cursor: pointer
+	position: relative
+	transition: transform .5s ease-in
+	filter: drop-shadow(-20px 20px 25px rgba(158, 82, 90, 0.5))
+	&:hover
+		z-index: 100 !important
+		opacity: 1 !important
+		filter: drop-shadow(-0px 0px 25px #FFFFFF)
+		transform: scale(.6) translate(-50%, -50%) !important 	
+	p 
+		margin: 0 62px
+		padding: 172px 0  
+		font-family: Raleway, font-serif
+		font-style: italic
+		font-weight: normal
+		line-height: 15px
+		font-size: 18px
+		text-align: center
+		display: flex
+		justify-content: center
+		align-items: center
+		overflow: hidden
+		height: 100%
+	.decor
+		width: 85px
+		height: 90px
+		z-index: 10
+		background-size: cover
+		position: absolute
+		top: 20px
+		left: 261px
+
+.bgc1
+	background-image: url(../img/bgc/cardheart.png)
+.bgc2
+	background-image: url(../img/bgc/e-round.png)
+.bgc3
+	background-image: url(../img/bgc/frame.png)
+.bgc4
+	background-image: url(../img/bgc/greenround.png)
+.bgc5
+	background-image: url(../img/bgc/pinkround.png)
+.bgc6
+	background-image: url(../img/bgc/pixelheart.png)
+.decor-1
+	background-image: url(../img/decor/decor1_big.png)
+.decor-2
+	background-image: url(../img/decor/decor2_big.png)
+.decor-3
+	background-image: url(../img/decor/decor3_big.png)
+.decor-4
+	background-image: url(../img/decor/decor4_big.png)
+.decor-5
+	background-image: url(../img/decor/decor5_big.png)
+.decor-6
+	background-image: url(../img/decor/decor6_big.png)
+.decor-7
+	background-image: url(../img/decor/decor7_big.png)
+
+.slot-xxl
+	z-index: 6
+	.card-v
+		transform: scale(.5) translate(-50%, -50%)
+
+.slot-xl
+	.card-v
+		z-index: 5
+		transform: scale(.45) translate(-50%, -50%)
+		opacity: 1
+
+.slot-l
+	.card-v
+		z-index: 4
+		transform: scale(.35) translate(-50%, -50%)
+		opacity: .8
+
+.slot-m
+	.card-v
+		z-index: 3
+		transform: scale(.3) translate(-50%, -50%)
+		opacity: .6
+
+.slot-s
+	.card-v
+		z-index: 2
+		transform: scale(.24) translate(-50%, -50%)
+		opacity: .4
+		
+.slot-xs
+	.card-v
+		z-index: 1
+		transform: scale(.2) translate(-50%, -50%)
+		opacity: .3
+	 
+.slot-xxs
+	.card-v
+		z-index: 0
+		transform: scale(.15) translate(-50%, -50%)
+		opacity: .3
+
+.slot
+	.decor
+    transform: scale(2)
+
+.my-card
+	.card-v
+		transform: scale(.7) translate(-50%, -50%)
+
+.active
+	top: 44% !important
+	left: 66% !important
+	z-index: 111 !important
+	.card-v
+		transform: scale(1) translate(-50%, -50%) !important
+		opacity: 1 !important
+
+.modal-dialog
+	max-width: 900px
+.modal-open
+	.modal
+		background: rgba(0, 0, 0, 0.8)
+.modal-content
+	padding: 60px 55px
+	background: #fff
+	border-radius: 10px
+.modal-header
+	border-bottom: none
+	position: absolute
+	top: 6px
+	right: 16px
+	span 
+		font-family: Rubik, sans-serif
+		font-weight: 900
+		line-height: 27px
+		font-size: 20px
+		color: #EC4790
+.modal-body
+	padding: 0
+	h3
+		font-family: Roboto, sans-serif
+		font-style: normal
+		font-weight: bold
+		line-height: 26px
+		font-size: 20px
+		color: #4B4B4B
+		margin-bottom: 25px
+	h4
+		font-family: Roboto, sans-serif
+		line-height: 26px
+		font-size: 20px
+		margin: 30px 0 26px
+	p
+		font-family: Roboto, sans-serif
+		font-size: 20px
+		line-height: 26px
+		padding-bottom: 18px
+
+// Конструктор
+
+.constructor
+	background-image: url(../img/page2bgc.png)
+	background-size: cover
+	min-height: 100vh
+	.etaps
+		display: flex
+		justify-content: space-between
+		max-height: 500px
+		.card-v
+			box-shadow: none
+			filter: none
+			&:hover
+				z-index: 100 !important
+				opacity: 1 !important
+				transform: none !important
+	.left-side
+		display: flex
+    justify-content: center
+		.card-v 
+			margin-top: 0
+			margin-left: 64px
+	.right-side	
+		margin-left: 63px	
+		.logotype
+			text-align: right
+		.text-block
+			font-family: Rubik, sans-serif
+			font-weight: 500
+			line-height: 23px
+			font-size: 18px
+			color: #4B4B4B
+			margin: 0
+			margin: 94px 30px
+			margin-right: 18px
+			min-width: 527px
+			.rules
+				margin-top: 226px
+				.common
+					margin-right: -18px
+			.etaps-wrapper
+				margin-top: 35px
+				.tab
+					position: relative
+					margin-right: 41px
+					&:nth-child(3)
+						margin-right: 0
+				.first-etap
+					&:after
+						content: ''
+						position: absolute
+						background-image: url(../img/arrow-right.svg)
+						top: 22px
+						right: -26px
+						width: 12px
+						height: 14px
+				.second-etap
+					&:after
+						content: ''
+						position: absolute
+						background-image: url(../img/arrow-right.svg)
+						top: 22px
+						right: -29px
+						width: 12px
+						height: 14px
+			.multiple-items
+				display: flex
+				margin-top: 50px
+				.owl-item 
+					width: 97px
+					height: 97px
+					margin-right: 10px
+					background-color: red
+					display: flex
+					justify-content: center
+					align-items: center
+					box-shadow: 0px 4px 4px rgba(208, 183, 156, 0.64)
+					background: #FFFCF8
+					border-radius: 6px
+					margin-bottom: 7px
+					&:hover
+						border: 3px solid rgba(255, 162, 179, 0.5)
+					img 
+						width: 80px
+						height: 80px
+				.active
+					border: 3px solid rgba(255, 162, 179, 0.5)
+	.btn-wrapper
+		text-align: center
+		.btn
+			line-height: 23px
+			font-size: 18px
+			padding: 22px 56px
+
+
+.choose-2
+	font-family: Rubik, sans-serif
+	font-weight: 300
+	line-height: 16px
+	font-size: 12px
+	color: #ED74A9
+	margin-top: 26px
+	position: relative
+	.alert-span 
+		margin-left: 2px
+		position: absolute
+		top: 0
+		left: 0
+		img 
+			margin-top: -2px
+			margin-right: 3px
+	.text-wrapper
+		padding-top: 23px
+		margin-bottom: 10px
+
+
+a.owl-item.slick-slide
+	max-width: 97px
+	outline: none
+
+button.slick-prev.slick-arrow
+	background-color: transparent
+	border: none
+	position: absolute
+
+button.slick-next.slick-arrow
+	background-image: url(../img/arrow-right.svg)
+	background-color: transparent
+	background-position: 55% 50%
+	color: transparent
+	border: none
+	width: 33px
+	height: 13px
+	position: absolute
+	right: -39px
+	top: 39px
+	padding: 0
+	outline: none
+
+button.slick-prev.slick-arrow
+	background-image: url(../img/arrow-left.svg)
+	background-color: transparent
+	background-position: 110% 50%
+	color: transparent
+	border: none
+	width: 20px
+	height: 13px
+	position: absolute
+	left: -39px
+	top: 39px
+	padding: 0
+	outline: none
+
+.ui-widget-content
+	position: relative
+	z-index: 99
+
+.etaps
+	.decor
+		background-position: 50%
+	.decor-1
+		width: 185px
+		height: 200px
+	.decor-2
+		width: 144px
+		height: 150px
+	.decor-3
+		width: 172px
+		height: 200px
+	.decor-4
+		width: 161px
+		height: 200px
+	.decor-5
+		width: 88px
+		height: 150px
+	.decor-6
+		width: 206px
+		height: 82px
+	.decor-7
+		width: 115px
+		height: 150px
+	
+
+.card-v.center
+	.decor
+		background-position: 50%
+		transform: scale(1)
+	.decor-1
+		width: 185px
+		height: 200px
+	.decor-2
+		width: 144px
+		height: 150px
+	.decor-3
+		width: 172px
+		height: 200px
+	.decor-4
+		width: 161px
+		height: 200px
+	.decor-5
+		width: 88px
+		height: 150px
+	.decor-6
+		width: 206px
+		height: 82px
+	.decor-7
+		width: 115px
+		height: 150px
+
+.hidden
+	display: none
+
+.slick-list
+	width: 100%
+
+.wrapp
+	.rules
+		text-align: right
+		margin-top: 28px
+		margin-right: 27px
+		.common
+			display: inline-block
+	.btn-wrapper
+		margin-top: 9px
+
+.constructor .etaps .card-v.rotate-card
+	transform: rotate(-11deg) !important
+
+// 3 страница
+
+.page-3
+	background-image: url(../img/page3bgc.png)
+	.decor.draggable
+		pointer-events: none
+	.etaps
+		max-height: none
+	.left-side
+		background-image: url(../img/backto3page.png)
+		background-repeat: no-repeat
+		background-position: 0 0px
+		flex-direction: column
+		padding-right: 82px
+		margin-top: -38px
+		max-height: 612px
+		// max-height: 592px
+		.card-v
+			margin-left: 10px
+			margin-top: 95px
+		a.common
+			max-width: 144px // Почему - потому что
+			margin-bottom: 7px
+			margin-left: 87px
+			margin-top: -37px
+	.right-side
+		.text-block
+			margin: 0
+			text-align: left
+			margin-top: 56px
+			margin-left: 3px
+			h2 
+				font-family: Rubik, sans-serif
+				font-style: normal
+				font-weight: 500
+				line-height: 36px
+				font-size: 28px
+				color: #4B4B4B
+				text-align: left
+				margin-bottom: 29px
+			p 
+				font-family: Rubik, sans-serif
+				font-style: normal
+				font-weight: normal
+				line-height: 26px
+				font-size: 20px
+				color: #222222
+		.social-network
+			margin: 28px 0
+			.social-element
+				margin-right: 15px
+				width: 55px
+				height: 55px
+				font-size: 12px			
+
+				img 
+					margin: 0 auto
+				img.facebook 
+					width: 18px
+				img.vk 
+					width: 35px
+				img.odno 
+					width: 19px
+				img.twitter 
+					width: 35px
+		.input-wrapper
+			border: none
+			margin-top: 14px
+			position: relative
+			padding-left: 10px
+			input
+				margin-bottom: 6px
+			label 
+				position: relative
+				img 
+					position: absolute
+					z-index: 1
+					top: 17px
+					left: 15px
+			label[for=email]
+				img 
+					top: 15px
+					left: 12px
+			label[for=phone]
+				top: 55px
+				img
+					top: 14px
+					left: 44px 
+				.required
+						left: 18px
+			input.phone
+				max-width: 226px
+				margin-left: 30px
+				padding-right: 8px
+	.wrapp
+		margin-top: -56px
+		.rules
+			margin-top: 29px
+	.btn-wrapper
+		.btn
+			padding: 22px 53px
+
+
+.required
+	position: absolute
+	width: 9px
+	height: 27px
+	left: -14px
+	top: -2px
+	font-family: Rubik, sans-serif
+	font-style: normal
+	font-weight: normal
+	line-height: 26px
+	font-size: 20px
+	color: #ED74A9
+
+// Последняя страница
+
+.last-main
+	min-height: 100vh
+	.wrap-logo
+		text-align: center
+	a.logotype 
+		padding: 0
+		padding-top: 44px
+		img 
+			width: 175px
+	h2
+		font-weight: 500
+		line-height: 36px
+		font-size: 28px
+		text-align: center
+		color: #EC4790
+		margin-top: 21px
+	.sides.last-page
+		background-image: none
+		.decor.draggable
+			pointer-events: none
+		.left-side
+			width: 100%
+			.show-more
+				left: auto
+				position: relative
+				margin-top: -40px
+		.slots
+			height: 500px
+			margin-top: 0
+			.slot-1.my-card
+				top: 32%
+				left: 50%
+				z-index: 1111
+				animation-name: one
+				animation-duration: 1s
+				animation-iteration-count: infinite
+				animation-delay: 1s
+				animation-direction: alternate
+				filter: drop-shadow(-0px 0px 25px #FFFFFF)
+				&:hover
+					 animation-play-state: paused
+					 .card-v
+						 transform: scale(.85) translate(-50%, -50%) !important
+			.slot-2
+				top: 22.7%
+				left: 31.5%
+			.slot-3
+				top: 29.6%
+				left: 65.3%
+			.slot-4
+				top: 55.7%
+				left: 43.4%
+			.slot-5
+				top: 45%
+				left: 66.4%
+				.card-v
+					z-index: 4
+			.slot-6
+				top: 29.6%
+				left: 24.8%
+			.slot-7
+				top: 10.8%
+				left: 17.8%
+			.slot-8
+				top: 21%
+				left: 88.4%
+			.slot-9
+				top: 68.3%
+				left: 48.1%
+			.slot-10
+				top: 64.6%
+				left: 89.4%
+			.slot-11
+				top: 12.5%
+				left: 69.7%
+			.slot-12
+				top: 47.9%
+				left: 78.45%			
+			.slot-13
+				top: 53.7%
+				left: 59.5%	
+				.card-v
+					z-index: 3
+			.slot-14
+				top: 70.4%
+				left: 68.3%
+			.slot-15
+				top: 30%
+				left: 13%
+			.slot-16
+				top: 39.9%
+				left: 17.4%
+			.slot-17
+				top: 74.5%
+				left: 59%
+			.slot-18
+				top: 42%
+				left: 94%
+			.slot-19
+				top: 67%
+				left: 14.8%
+			.slot-20
+				top: 70%
+				left: 76.8%
+			.slot-21	
+				top: 73.4%
+				left: 93%
+			.slot-22
+				top: 56%
+				left: 19.8%
+			.slot-23
+				top: 21.2%
+				left: 6.2%
+			.slot-24
+				top: 8%
+				left: 96.4%
+			.slot-25
+				top: 63.6%
+				left: 99%
+			.slot-26
+				top: 29.5%
+				left: 95%
+			.slot-27
+				top: 73.2%
+				left: 36.4%
+			.slot-28
+				top: 23%
+				left:	78.6%
+			.slot-29
+				top: 46.7%
+				left: 9%
+			.slot-30
+				top: 60%
+				left: 29%
+			.slot-31
+				top: 65%
+				left: 6%
+			.slot-32
+				top: 43%
+				left: 4%
+			.active
+				top: 50% !important
+				left: 50% !important
+				z-index: 1111 !important
+				.card-v
+					transform: scale(.85) translate(-50%, -50%) !important
+					opacity: 1 !important
+
+		.text-block
+			text-align: center
+			margin-top: -48px
+			padding-bottom: 30px
+			p 
+				margin-top: 23px
+				margin-bottom: 22px
+				line-height: 26px
+				font-size: 20px
+				color: #222222
+			a.common 
+				display: inline
+			a.common.show-more
+				margin-left: 32px
+			.social-network
+				justify-content: center
+				.social-element
+					margin: 0 10px
+
+// slots display for php
+.greeting.last-main
+	.sides
+		.left-side
+			.slots
+				.slot
+					display: block
+
+
+// social 
+.social-element 
+	.vk-link
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+		a 
+			z-index: 9999
+			opacity: 0
+			width: 100%
+			height: 100%
+	.ok-link
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+	.fb-icon
+		// position: relative
+		position: absolute
+		z-index: 9999
+		height: 100%
+		width: 100%
+		overflow: hidden
+		iframe 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100% !important
+			height: 100% !important
+			display: block
+			transform: scale(10)
+			transform-origin: top left
+			opacity: 0.0001
+	#ok_shareWidget
+		position: relative
+		width: 100%
+		height: 100%
+		overflow: hidden
+		z-index: 100
+		iframe 
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			transform: scale(10)
+			opacity: 0.0001
+			z-index: 1000
+			transform-origin: top left
+	.tw-icon
+		position: absolute
+		z-index: 100
+		height: 100%
+		width: 100%
+		overflow: hidden
+		iframe 
+			position: absolute
+			opacity: 0.0001
+			z-index: 1000
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0	
+			transform: scale(10)
+			transform-origin: top left
+
+
+
+.wrap-logo
+	text-align: right
+
+@import "media" // Всегда в конце

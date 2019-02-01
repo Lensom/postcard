@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+
+
 // Размер символов в каждой открытке
 function colSymbols() {
 	$('.text-card').each(function(indx, element){
@@ -17,18 +20,16 @@ function colSymbols() {
 }
  
 // Раскрытие открытки по клику
-function openPostcard() {
-	$('.card-v').on('click', function(e){	
-		if ($(this).closest('.slot').hasClass('my-card')) {
-			return false;
-		} else if (!$(this).closest('.slot').hasClass('active')) {
-			$('.slot').removeClass('active');	
-			$(this).closest('.slot').addClass('active');
-		} else {
-			$('.slot').removeClass('active');
-		}			
-	})
-}
+$('body').on('click', '.card-v', function(e){	
+	if ($(this).closest('.slot').hasClass('my-card')) {
+		return false;
+	} else if (!$(this).closest('.slot').hasClass('active')) {
+		$('.slot').removeClass('active');	
+		$(this).closest('.slot').addClass('active');
+	} else {
+		$('.slot').removeClass('active');
+	}			
+})
 
 // Закрытие валентинки вне блока
 $(document).mouseup(function (e){ 
@@ -41,16 +42,18 @@ $(document).mouseup(function (e){
 
 // Счетчик количества символов в textarea для скрытие alert и disabled button submit
 function alertHidden() {
-	var textVal = $("textarea").val();
-		if (($('textarea').val().length > 10) && ($(".card-v .decor").length > 0))  {
-		$('.alert-span').hide();
-		$('.btn.btn-submit').prop('disabled', false)
-	} else if (($('textarea').val().length > 10))  {
-		$('.alert-span').hide();
-	} else if (textVal.length < 10) {
-		$('.alert-span').show();
-		$('.btn.btn-submit').prop('disabled', true)
-	}
+	if ($('textarea').length){
+		var textVal = $("textarea").val();
+			if (($('textarea').val().length > 10) && ($(".card-v .decor").length > 0))  {
+			$('.alert-span').hide();
+			$('.btn.btn-submit').prop('disabled', false)
+		} else if (($('textarea').val().length > 10))  {
+			$('.alert-span').hide();
+		} else if (textVal.length < 10) {
+			$('.alert-span').show();
+			$('.btn.btn-submit').prop('disabled', true)
+		}
+		}
 
 }
 
@@ -139,11 +142,6 @@ $('.el-6').on('click', function(){
 	$('.card-v').addClass('bgc3');
 });
 
-$('.dec').on('click', function(e){
-	e.preventDefault();
-	$(this).parent().find('.dec').removeClass('active');
-	$(this).addClass('active');
-});
 
 $('.tab-active').on('click', function(e){
 	e.preventDefault();
@@ -162,15 +160,21 @@ $('.tab-active').on('click', function(e){
 $('.tab').on('click', function(){
 	$('.choose').addClass('hidden')
 	$('.choose').eq($(this).index()).removeClass('hidden')
+	// $('.alert-drag').hide();
+})
+
+$('.first-etap').on('click', function(){
+	$('.alert-drag').addClass('hidden');
 })
 
 $('.second-etap').on('click', function() {
 	alertHidden();
+	$('.alert-drag').addClass('hidden');
 })
 
 $('.third-etap').on('click', function(){
-	$('.alert-drag').removeClass('hidden')
 	alertHidden();
+	$('.alert-drag').removeClass('hidden');
 })
 
 // Выбор цвета текста 
@@ -198,7 +202,7 @@ $('.color').on('click', function(e){
 
 // jqueryUi drag-n-drop  - 3 этап открытки
 function dragContainer() {
-	$( ".decor" ).draggable({ containment: ".card-v", scroll: false })
+	$( ".construct-page .decor" ).draggable({ containment: ".card-v", scroll: false })
 }
 function hideDecor() {
 	$( ".last-decor" ).dblclick(function() {
@@ -207,17 +211,15 @@ function hideDecor() {
 }
 
 
-$('.dec').on('click', function(e){
-	var preText = $('.card-v').html()
-	var index = parseInt($(this).attr('class').match(/d-\d/)[0].match(/\d/)[0]);
-	var text = preText + '<div style="left: 150px; top: 100px;" class="decor decor-'+index+' draggable ui-widget-content last-decor ui-draggable ui-draggable-handle"></div>'
-	if ($('.card-v').find('.decor').hasClass('decor-' + index)) {
-		// $('.decor .decor-' + index).detach();
-	$('.decor.draggable.ui-widget-content.last-decor.ui-draggable.ui-draggable-handle.decor-' + index).detach()
 
-	} else {
-		$('.card-v').html(text)
-	}	
+$('.dec').on('click', function(e){
+	var index = $(this).attr('data-index');
+	$(this).toggleClass('active');
+	if ($(this).hasClass('active')){
+		$('.card-v').append('<div style="left: 150px; top: 100px;" class="decor decor-'+index+' draggable ui-widget-content last-decor ui-draggable ui-draggable-handle"></div>');
+	}else{
+		$('.card-v .decor-'+index).remove();
+	}
 	
 	dragContainer()
 	alertHidden();
@@ -321,7 +323,7 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 	setCookie("colorText", $('.text-card').css('color') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 
 
-	location.href="step-2.html"
+	location.href="result.php"
 
 })
 
@@ -334,7 +336,7 @@ var getSticker = getCookie("sticker");
 var new_divs=[];
 var cook = document.cookie;
 var count = 0;
-if (cook.length) {
+if (cook.length && ( $('.constructor').length || $('.last-main').length)) {
 	count = cook.match(/stickerPosLeft/g).length;
 }
 for (let index = 0; index < count; index++) {
@@ -348,13 +350,13 @@ for (let index = 0; index < count; index++) {
 if(getBackground) {
 	$('#card').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
 	$('#card').addClass(getBackground);
-} else {
-	$('#card').addClass('bgc6');
 }
 
 new_divs.forEach(function(v){
 	var new_new_div = $('<div style="" class="decor draggable ui-widget-content last-decor ui-draggable ui-draggable-handle"></div>')
 	new_new_div.addClass(v.sticker)
+	var index = v.sticker.replace('decor-', '');
+	$('.dec[data-index="'+index+'"]').addClass('active');
 	new_new_div.css({
 		"top":v.stickerPosTop,
 		"left":v.stickerPosLeft,
@@ -392,7 +394,7 @@ function take_post(){
 			$('.repeat-email').removeClass('hidden');
 			$('.repeat-phone').removeClass('hidden');
 		} else {
-			location.href="last-page.html"
+			location.href="thankyou.php"
 		}
 	});
 
@@ -472,25 +474,31 @@ $('#form').on('submit', function(e) {
 	})
 
 
-	$('.validate').on('input', function() {
+	$('.validate').on('keyup', function() {
 	
+		console.log('----------');
 		var email = $('.email').val();
 		var name = $('.name').val();
 		var trigger = false;
+		var shared = false;
 		function validateEmail(email) {
 			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(String(email).toLowerCase());
 		}
 
-		if($('#phone').val().length > 16) {
-			trigger = true;
-			console.log(trigger)
+
+
+		if ( $('#phone').val().indexOf("_") == -1 ){
+			trigger = true
 		}
 
-		console.log($('#phone').val().length)
+		if ($('.social-element.shared').length){
+			shared = true;
+		}
 
-	
-		if (name.length && validateEmail(email) && trigger) {
+		console.log(name.length +' '+ validateEmail(email) +' '+ trigger +' '+ shared);
+
+		if (name.length && validateEmail(email) && trigger && shared) {
 			$('.btn.btn-submit.ready').prop('disabled', false)
 		} else {
 			$('.btn.btn-submit.ready').prop('disabled', true)
@@ -498,38 +506,30 @@ $('#form').on('submit', function(e) {
 	});
 
 
-// Кнопка поделиться в соц сеть odnoklassniki
-!function (d, id, did, st, title, description, image) {
-	var js = d.createElement("script");
-	js.src = "https://connect.ok.ru/connect.js";
-	js.onload = js.onreadystatechange = function () {
-	if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-		if (!this.executed) {
-			this.executed = true;
-			setTimeout(function () {
-				OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
-			}, 0);
-		}
-	}};
-	d.documentElement.appendChild(js);
-}(document,"ok_shareWidget",document.URL,'{"sz":12,"st":"oval","nc":1,"nt":1}',"Онлайн-гипермаркет dostavka.by","Создай свою уникальную валентинку и выиграй что-то очень крутое!","http://loveletters.by/img/share.jpg");
-
-
 // Загрузить еще открытки
 $('.show-more').on('click', function(){
-	setLetters();
+	if (!$(this).hasClass('loading')){
+		$(this).addClass('loading');
+		setLetters();		
+	}
 	return false;
 })
+
+if ($('.slots-s').length){
+	colSymbols();
+}
 
 function setLetters() {		
 	$.post('download_more_letters.php', {data: {}}, function(data){
 		var html = $(data);
 		$('.slots-s').html(html);			
 		colSymbols();
-		openPostcard();
+		//openPostcard();
+		setTimeout(function(){
+			$('.show-more').removeClass('loading');
+		}, 1000)
 	})
 }
-setLetters();
 
 // Кнопка поделиться в соц сеть twitter 
 !function(d, s, id) {
@@ -546,8 +546,71 @@ setLetters();
 hideDecor();
 alertHidden();
 
-$('.social-element').on('click', function(){
-	console.log('asd')
-})
+
+	// Кнопка поделиться в соц сеть odnoklassniki
+	!function (d, id, did, st, title, description, image) {
+		var js = d.createElement("script");
+		js.src = "https://connect.ok.ru/connect.js";
+		js.onload = js.onreadystatechange = function () {
+		if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+			if (!this.executed) {
+				this.executed = true;
+				setTimeout(function () {
+					OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+					listenForShare();
+				}, 0);
+			}
+		}};
+		d.documentElement.appendChild(js);
+	}(document,"ok_shareWidget",document.URL,'{"sz":12,"st":"oval","nc":1,"nt":1}',"Онлайн-гипермаркет e-dostavka.by","Создай свою уникальную валентинку и выиграй приз!","http://loveletters.by/img/edostavka.jpg");
+
+
+	function listenForShare() {
+	    if (window.addEventListener) {
+	        window.addEventListener('message', onShare, false);
+	    } else {
+	        window.attachEvent('onmessage', onShare);
+	    }
+	}
+
+	function onShare(e) {
+		if (e.origin == "https://connect.ok.ru"){
+			console.log(e);
+	    var args = e.data.split("$");
+	    if (args[0] == "ok_shared") {
+		    setCookie("okshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+		    $('.social-element.ok').addClass('shared')
+	    }
+	   }
+	}
+
+	$('.fb-share').click(function(e) {
+	    window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+	    setCookie("fbshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+	    $('.social-element.fb').addClass('shared')
+	    return false;
+	});
+
+	$('.social-element.vk').click(function(){
+	    setCookie("vkshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+	    $('.social-element.vk').addClass('shared')
+	    return false;
+	})
+
+	if (getCookie("fbshared")){
+		$('.social-element.fb').addClass('shared')
+	}
+	if (getCookie("vkshared")){
+		$('.social-element.vk').addClass('shared')
+	}
+	if (getCookie("odshared")){
+		$('.social-element.od').addClass('shared')
+	}
+	if (getCookie("twshared")){
+		$('.social-element.tw').addClass('shared')
+	}
+
+
 
 })
+

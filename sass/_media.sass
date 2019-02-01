@@ -16,31 +16,45 @@
 					br 
 						display: none
 				.text-block
-					margin: 112px 0 0 140px
+					margin: 50px 0 0 140px
 					text-align: center
 				.btn.btn-submit
 					margin-left: 0
 	.slot-xxl
 		.card-v
 			transform: scale(.4) translate(-50%, -50%)
+			&:hover
+			  transform: scale(.45) translate(-50%, -50%)
 	.slot-xl
 		.card-v
 			transform: scale(.35) translate(-50%, -50%)
+			&:hover
+			  transform: scale(.4) translate(-50%, -50%)
 	.slot-l
 		.card-v
 			transform: scale(.25) translate(-50%, -50%)
+			&:hover
+			  transform: scale(.3) translate(-50%, -50%)
 	.slot-m
 		.card-v
 			transform: scale(.2) translate(-50%, -50%)
+			&:hover
+			  transform: scale(.25) translate(-50%, -50%)
 	.slot-s
 		.card-v
-			transform: scale(.14) translate(-50%, -50%)			
+			transform: scale(.14) translate(-50%, -50%)	
+			&:hover
+			  transform: scale(.18) translate(-50%, -50%)		
 	.slot-xs
 		.card-v
-			transform: scale(.1) translate(-50%, -50%)		
+			transform: scale(.1) translate(-50%, -50%)	
+			&:hover
+			  transform: scale(.13) translate(-50%, -50%)	
 	.slot-xxs
 		.card-v
 			transform: scale(.1) translate(-50%, -50%)
+			&:hover
+			  transform: scale(.12) translate(-50%, -50%)
 
 	// 2 Страница
 	.constructor
@@ -127,19 +141,22 @@
 			margin: 144px 27px 30px 0
 	button.slick-next.slick-arrow
 		top: auto
-		bottom: -16%
-		right: 47%
-		width: 12px
+		bottom: -20px
+		left: 50%
+		margin-left: 5px
+
 	button.slick-prev.slick-arrow
 		top: auto
-		bottom: -16%
-		left: 44%
-		width: 12px
-	
-	.card-v
-		.alert-drag
-			left: -50px
+		bottom: -20px
+		right: 50%
+		margin-right: 9px
 
+	.multiple-items
+		max-width: 422px
+	
+	.alert-drag
+		font-size: 16px
+		margin-top: 20px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -149,11 +166,28 @@
 	.card-v
 		.alert-drag
 			left: 0
+
+	.slot-xxl, .slot-xxl:hover
+		.card-v
+			transform: scale(.4) translate(-50%, -50%)
+	.slot-xl, .slot-xl:hover
+		.card-v
+			transform: scale(.35) translate(-50%, -50%)
+	.slot-l, .slot-l:hover
+		.card-v
+			transform: scale(.25) translate(-50%, -50%)
+	.slot-m, .slot-m:hover
+		.card-v
+			transform: scale(.2) translate(-50%, -50%)
+	.slot-s, .slot-s:hover
+		.card-v
+			transform: scale(.2) translate(-50%, -50%)
+
 	.greeting
 		.sides
 			flex-direction: column
-			background-size: 71%
-			background-position: 55% 76%
+			background-image: none
+			padding-bottom: 0
 			.right-side
 				margin-top: 50px
 				order: 0
@@ -171,6 +205,10 @@
 			.left-side
 				order: 1
 				width: 100%
+				padding-bottom: 74px 
+				background: url(../img/wall1.png) no-repeat 50% 50%
+				background-size: contain
+
 				.wrapper-show
 					text-align: center
 				.show-more
@@ -179,7 +217,7 @@
 					margin-top: 0
 					left: auto
 				.slots
-					// height: 65vh
+					min-height: 460px
 					.slot-1
 						top: 56%
 						left: 59.2%
@@ -320,6 +358,8 @@
 						top: 57% !important
 	.sides
 		padding-bottom: 74px
+	.multiple-items
+		max-width: 100%
 	
 	// 2 страница
 
@@ -357,6 +397,11 @@
 		.right-side
 			margin: 0
 			margin-top: 20px
+
+			.choose
+				margin-left: -15px
+				margin-right: -15px
+
 			.text-block
 				text-align: center
 				margin-top: 0
@@ -403,12 +448,6 @@
 			padding: 20px 0 30px 0
 
 	
-	button.slick-next.slick-arrow
-		bottom: 8%
-		right: 47.3%
-	button.slick-prev.slick-arrow
-		bottom: 8%
-		left: 46.7%
 
 
 /* Small Devices, Tablets */
@@ -438,8 +477,8 @@
 			margin: 0 auto
 			margin-top: -50px
 			margin-bottom: -50px
-			.card-v
-				transform: scale(.8) translate(12.5%, 12.5% )
+			.card-v, .card-v:hover
+				transform: scale(.8) translate(12.5%, 12.5%)!important
 	
 	.wrapp
 		.rules
@@ -487,12 +526,6 @@
 							right: 54px
 							transform: rotate(90deg)
 	
-	button.slick-next.slick-arrow
-		bottom: 8%
-		right: 40%
-	button.slick-prev.slick-arrow
-		bottom: 8%
-		left: 40%
 	
 	.modal-content
 		padding: 45px 15px
@@ -620,28 +653,16 @@
 			background-position: 3% 3%
 
 @media only screen and (max-height:900px) and (min-width: 992px)
-	.page-3
-		.left-side
-			padding-right: 92px
-		.right-side
-			padding-left: 28px
-			width: 50%
-			margin-left: auto
-			.text-block
-				margin: 0
-				h2 
-					margin-top: 7px
-					margin-bottom: 5px
-					font-size: 24px
-		.wrapp
-			margin-top: -50px
-			.rules
-				margin-top: -36px
 	.greeting
 		.sides
-			background-size: 50%
-			background-position: 3% -100%
-
+			// background-size: 50%
+			// background-position: 3% -100%
+			background-size: 45%
+			background-position: 13% -9%
+	.last-main
+		.sides.last-page
+			.text-block
+				padding-bottom: 0
 
 @media only screen and (max-height:780px) and (min-width: 992px)
 	a.logotype 
@@ -659,10 +680,12 @@
 				margin-bottom: 20px
 				margin-top: 34px
 				max-height: 600px
+				h2 
+					margin-bottom: 38px
 				.rules
 					margin: 56px 27px 30px 0
 				.text-block
-					margin: 25px 0 0 244px
+					margin: 25px 0 0 200px
 			.left-side
 				.slots
 					margin-top: -50px
@@ -678,34 +701,7 @@
 				font-size: 14px
 				padding: 12px 20px
 
-		.wrapp
-			.rules
-				margin-top: -69px
 
-	.page-3
-		.left-side
-			padding-right: 92px
-			position: absolute
-			left: 8px
-			top: 17px
-		.right-side
-			padding-left: 28px
-			width: 50%
-			margin-left: auto
-			.text-block
-				margin: 0
-				h2 
-					margin-top: 7px
-					margin-bottom: 5px
-					font-size: 24px
-		.wrapp
-			margin-top: -20px
-			.rules
-				margin-top: -36px	
-		.btn-wrapper
-			margin-top: 8px
-			.btn
-				margin-top: 0
 	
 	.last-main
 		a.logotype 
@@ -727,12 +723,11 @@
 		.alert-drag
 			font-size: 14px
 
-
-
 @media only screen and (max-height:660px) and (min-width: 992px)
 	.greeting
 		.sides
-			background-position: 0 -17%
+			// background-position: 0 -17%
+			background-position: 0 -5%
 			.right-side
 				max-height: 473px
 				.rules
@@ -741,61 +736,18 @@
 		.wrapp
 			.rules
 				margin-top: -27px	
-	.page-3
-		.left-side
-			padding-right: 92px
-			position: absolute
-			left: 8px
-			top: 17px
-		.right-side
-			padding-left: 28px
-			width: 50%
-			margin-left: auto
-			.text-block
-				margin: 0
-				h2 
-					margin-top: 7px
-					margin-bottom: 5px
-					font-size: 24px
-				p 
-					line-height: 24px
-					margin-bottom: 0px
-			.social-network
-				margin: 15px 0
-				.social-element
-					width: 40px
-					height: 40px
-					img.facebook 
-						width: 13px
-					img.vk 
-						width: 28px 
-					img.odno 
-						width: 15px
-					img.twitter 
-						width: 25px
-		.wrapp
-			margin-top: -25px
-			.rules 
-				margin-top: -47px
-			.btn-wrapper
-				margin-top: 10px
-				.btn 
-					margin-top: 0
-	
 	.last-main
 		h2 
 			margin-top: 0
 			font-size: 22px
 			line-height: 30px
 		.sides.last-page
-			.text-block
-				margin-top: -87px
-		.sides.last-page
 			.text-block 
+				margin-top: -94px
 				p 
-					margin-top: 4px 
-					line-height: 12px
-					margin-bottom: 10px
+					margin-top: 9px
+					line-height: 22px
+					margin-bottom: 18px
 					font-size: 15px
 					a.common 
 						font-size: 15px

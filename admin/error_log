@@ -1,10 +1,10 @@
-[28-Jan-2019 15:42:17 Europe/Minsk] PHP Warning:  include_once(libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:17 Europe/Minsk] PHP Warning:  include_once(): Failed opening 'libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:17 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/admin/index.php on line 5
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Warning:  include_once(./libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Warning:  include_once(): Failed opening './libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/admin/index.php on line 5
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Warning:  include_once(./libs/php/letter_class.php): failed to open stream: No such file or directory in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Warning:  include_once(): Failed opening './libs/php/letter_class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pechkine/loveletters.by/admin/index.php on line 3
-[28-Jan-2019 15:42:40 Europe/Minsk] PHP Fatal error:  Class 'Letter' not found in /home/pechkine/loveletters.by/admin/index.php on line 5
-[28-Jan-2019 16:10:28 Europe/Minsk] PHP Fatal error:  Cannot redeclare Letter::removeLetter() in /home/pechkine/loveletters.by/libs/php/letter_class.php on line 161
+[01-Feb-2019 15:16:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'Exception' with message 'Connection failed!: SQLSTATE[HY000] [2002] Connection timed out<br/>' in /home/pechkine/loveletters.by/libs/php/letter_class.php:76
+Stack trace:
+#0 /home/pechkine/loveletters.by/admin/index.php(5): Letter->__construct()
+#1 {main}
+  thrown in /home/pechkine/loveletters.by/libs/php/letter_class.php on line 76
+[01-Feb-2019 15:17:13 Europe/Minsk] PHP Fatal error:  Uncaught exception 'Exception' with message 'Connection failed!: SQLSTATE[HY000] [2002] Connection timed out<br/>' in /home/pechkine/loveletters.by/libs/php/letter_class.php:76
+Stack trace:
+#0 /home/pechkine/loveletters.by/admin/index.php(5): Letter->__construct()
+#1 {main}
+  thrown in /home/pechkine/loveletters.by/libs/php/letter_class.php on line 76
