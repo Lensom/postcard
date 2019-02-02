@@ -112,36 +112,14 @@ $(".multiple-items").slick({
 
 // backround choose-1 
 $('.el').on('click', function(e){
-	e.preventDefault();
-	$('.card-v').removeClass('bgc1 bgc2 bgc3 bgc4 bgc5 bgc6');
+	e.preventDefault();	
+	$('.el').each(function(){
+		$('.card-v').removeClass($(this).attr('data-class'));
+	})
 	$(this).parent().find('.el').removeClass('active');
 	$(this).addClass('active');
+	$('.card-v').addClass($(this).attr('data-class'));
 });
-
-$('.el-1').on('click', function(){
-	$('.card-v').addClass('bgc1');
-});
-
-$('.el-2').on('click', function(){
-	$('.card-v').addClass('bgc5');
-});
-
-$('.el-3').on('click', function(){
-	$('.card-v').addClass('bgc4');
-});
-
-$('.el-4').on('click', function(){
-	$('.card-v').addClass('bgc6');
-});
-
-$('.el-5').on('click', function(){
-	$('.card-v').addClass('bgc2');
-});
-
-$('.el-6').on('click', function(){
-	$('.card-v').addClass('bgc3');
-});
-
 
 $('.tab-active').on('click', function(e){
 	e.preventDefault();
@@ -286,7 +264,7 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 			var item = $(this)
 			var arr = item.attr('class').split(/\s+/);
 			arr.forEach(element => {
-				if (element == 'decor-1'|| element == 'decor-2'|| element == 'decor-3'|| element == 'decor-4'|| element == 'decor-5'|| element == 'decor-6'|| element == 'decor-7') {
+				if(element.indexOf("decor-") == 0 ){
 					setCookie("sticker" + i, element , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 					setCookie("stickerPosLeft" + i, item.css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 					setCookie("stickerPosTop" + i, item.css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
@@ -295,8 +273,8 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 		}
 	)
 	$.each(bgcList, function(index, item) {
-			if (item == 'bgc1'|| item == 'bgc2' || item == 'bgc3' || item == 'bgc4' || item == 'bgc5' || item == 'bgc6') {
-					myPostcard.background = item;
+			if(item.indexOf("bgc") == 0 )
+			{  myPostcard.background = item;
 					setCookie("background", item , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 			}
 	});
@@ -308,9 +286,8 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 		obj.posLeft = left;
 		var classSticker = $(this).attr('class').split(/\s+/);
 		classSticker.forEach(element => {
-			if (element == 'decor-1'|| element == 'decor-2'|| element == 'decor-3'|| element == 'decor-4'|| element == 'decor-5'|| element == 'decor-6'|| element == 'decor-7') {
-				obj.sticker = element;
-	
+			if(element.indexOf("decor-") == 0 ){
+				obj.sticker = element;	
 			}	
 		});
 		myPostcard.stickers.push(obj);
@@ -436,31 +413,7 @@ $('#form').on('submit', function(e) {
 	var phone = $('.phone').val();
 	var name = $('.name').val();
 
-	function validateEmail(email) {
-		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(String(email).toLowerCase());
-	}
-
-	function validatePhone(phone) {
-		var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-		return re.test(String(phone));
-	}
 		
-	// if (!name.length) {
-	// 	$('.name').addClass('error');
-	// } else {
-	// 	$('.name').removeClass('error');
-	// }
-	// if (!validatePhone(phone)) {
-	// 	$('.phone').addClass('error');
-	// } else {
-	// 	$('.phone').removeClass('error');
-	// }
-	// if (!validateEmail(email)) {
-	// 	$('.email').addClass('error');
-	// } else {
-	// 	$('.email').removeClass('error');
-	// }
 
 	if (name.length && validatePhone(phone) && validateEmail(email)) {
 		take_post();
@@ -475,18 +428,15 @@ $('#form').on('submit', function(e) {
 
 
 	$('.validate').on('keyup', function() {
-	
-		console.log('----------');
+		validate();
+	});
+
+	function validate(){
+
 		var email = $('.email').val();
 		var name = $('.name').val();
 		var trigger = false;
 		var shared = false;
-		function validateEmail(email) {
-			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			return re.test(String(email).toLowerCase());
-		}
-
-
 
 		if ( $('#phone').val().indexOf("_") == -1 ){
 			trigger = true
@@ -496,14 +446,41 @@ $('#form').on('submit', function(e) {
 			shared = true;
 		}
 
-		console.log(name.length +' '+ validateEmail(email) +' '+ trigger +' '+ shared);
+
 
 		if (name.length && validateEmail(email) && trigger && shared) {
-			$('.btn.btn-submit.ready').prop('disabled', false)
+			$('.btn.btn-submit.ready').removeClass('disabled')
 		} else {
-			$('.btn.btn-submit.ready').prop('disabled', true)
+			$('.btn.btn-submit.ready').addClass('disabled')
 		}
-	});
+
+	}
+
+	$('.btn-submit[form="form"]').click(function(e){
+
+		var email = $('.email').val();
+		var name = $('.name').val();
+		var shared = false;
+
+		if ($('.social-element.shared').length){
+			shared = true;
+		}
+
+		$('.input-mess').text('');
+		if (name.length == 0 || !validateEmail(email) || !($('#phone').val().length) ||  $('#phone').val().indexOf("_") >= 0) {
+			$('.input-mess').show().text('Заполните все поля.')
+		}
+		if (!shared) {
+			$('.input-mess').show().text($('.input-mess').text()+' Поделитесь в соц.сетях.')
+		}
+		if (name.length && validateEmail(email) && trigger && shared) {
+			$('.btn.btn-submit.ready').removeClass('disabled')
+		} else {
+			$('.btn.btn-submit.ready').addClass('disabled')
+			e.preventDefault();
+		}
+	})
+
 
 
 // Загрузить еще открытки
@@ -531,16 +508,35 @@ function setLetters() {
 	})
 }
 
-// Кнопка поделиться в соц сеть twitter 
-!function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (!d.getElementById(id)) {
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//platform.twitter.com/widgets.js";
-			fjs.parentNode.insertBefore(js, fjs);
-	}
-}(document, "script", "twitter-wjs");
+
+if ($('#tw-btn').length){
+
+twttr.ready(function(){
+	twttr.widgets.createShareButton( 'http://loveletters.by', 
+		document.getElementById('tw-btn'), { 
+			count: 'none', 
+			text: 'Создай свою уникальную валентинку и выиграй приз!' 
+		}).then(function (el) { 
+			twttr.events.bind(
+			  'click',
+			  function (ev) {
+					setCookie("twshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+					    $('.social-element.tw').addClass('shared')	
+
+					$('.input-mess').text('');
+					if (name.length == 0 || !validateEmail(email) || !($('#phone').val().length) ||  $('#phone').val().indexOf("_") >= 0) {
+						$('.input-mess').show().text('Заполните все поля.')
+					}
+					if (!shared) {
+						$('.input-mess').show().text($('.input-mess').text()+' Поделитесь в соц.сетях.')
+					} 
+					    validate()
+			    
+			  }
+			); 
+		 });
+	})
+}
 
 
 hideDecor();
@@ -562,7 +558,7 @@ alertHidden();
 			}
 		}};
 		d.documentElement.appendChild(js);
-	}(document,"ok_shareWidget",document.URL,'{"sz":12,"st":"oval","nc":1,"nt":1}',"Онлайн-гипермаркет e-dostavka.by","Создай свою уникальную валентинку и выиграй приз!","http://loveletters.by/img/edostavka.jpg");
+	}(document,"ok_shareWidget", "www.loveletters.by" ,'{"sz":12,"st":"oval","nc":1,"nt":1}',"Онлайн-гипермаркет e-dostavka.by","Создай свою уникальную валентинку и выиграй приз!","http://loveletters.by/img/edostavka.jpg?v=1.01");
 
 
 	function listenForShare() {
@@ -574,12 +570,22 @@ alertHidden();
 	}
 
 	function onShare(e) {
-		if (e.origin == "https://connect.ok.ru"){
 			console.log(e);
+		if (e.origin.indexOf("ok.ru") >= 0){
 	    var args = e.data.split("$");
 	    if (args[0] == "ok_shared") {
 		    setCookie("okshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
-		    $('.social-element.ok').addClass('shared')
+		    $('.social-element.od').addClass('shared')
+
+					$('.input-mess').text('');
+					if (name.length == 0 || !validateEmail(email) || !($('#phone').val().length) ||  $('#phone').val().indexOf("_") >= 0) {
+						$('.input-mess').show().text('Заполните все поля.')
+					}
+					if (!shared) {
+						$('.input-mess').show().text($('.input-mess').text()+' Поделитесь в соц.сетях.')
+					}
+		    validate()
+		    
 	    }
 	   }
 	}
@@ -588,12 +594,18 @@ alertHidden();
 	    window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 	    setCookie("fbshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 	    $('.social-element.fb').addClass('shared')
+	    
+	    validate()
+	    
 	    return false;
 	});
 
 	$('.social-element.vk').click(function(){
 	    setCookie("vkshared", true , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
 	    $('.social-element.vk').addClass('shared')
+	    validate()
+
+	    
 	    return false;
 	})
 
@@ -603,7 +615,7 @@ alertHidden();
 	if (getCookie("vkshared")){
 		$('.social-element.vk').addClass('shared')
 	}
-	if (getCookie("odshared")){
+	if (getCookie("okshared")){
 		$('.social-element.od').addClass('shared')
 	}
 	if (getCookie("twshared")){
@@ -614,3 +626,15 @@ alertHidden();
 
 })
 
+
+
+
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
+
+function validatePhone(phone) {
+	var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+	return re.test(String(phone));
+}

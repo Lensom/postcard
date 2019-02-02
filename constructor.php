@@ -1,39 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
    <head>
-      <meta charset="utf-8">
-      <title>Создай свою валентинку</title>
-      <meta name="description" content="e-dostavka.by Онлайн-гипермаркет.">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-      <!-- Chrome, Firefox OS and Opera -->
-      <meta name="theme-color" content="#000">
-      <!-- Windows Phone -->
-      <meta name="msapplication-navbutton-color" content="#000">
-      <!-- iOS Safari -->
-      <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-      <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-      <link rel="stylesheet" href="css/main.min.css?v=1">
-      <link rel="canonical" href="http://loveletters.by/">
-      <meta property="og:url"           content="http://loveletters.by/" />
-      <meta property="og:type"          content="website" />
-      <meta property="og:title"         content="Онлайн-гипермаркет e-dostavka.by" />
-      <meta property="og:description"   content="Создай свою уникальную валентинку и выиграй приз!" />
-      <meta property="og:image"         content="http://loveletters.by/img/edostavka.jpg" />
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133567449-1"></script>
-      <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-       gtag('config', 'UA-133567449-1');
-      </script>
+      <?php include_once('head.php'); ?>
    </head>
    <body class="construct-page">
       <div class="constructor">
@@ -46,7 +14,7 @@
             <div class="etaps">
                <div class="left-side">
                   <div class="etap-wrp">
-                     <div class="card-v bgc6" id="card">
+                     <div class="card-v bgc4" id="card">
                         <p class="text-card" id="text-card"></p>
                      </div>
                   </div>
@@ -61,12 +29,19 @@
                      </div>
                      <div class="choose choose-1">
                         <div class="multiple-items" id="first-slide">          
-                           <a href="#" class="owl-item el el-1"><img src="img/bgc-icon/cardheart_icon.svg" alt="Owl Image"></a>	
-                           <a href="#" class="owl-item el el-2"><img src="img/bgc-icon/pinkround_icon.svg" alt="Owl Image"></a>								
-                           <a href="#" class="owl-item el el-3"><img src="img/bgc-icon/greenround_icon.svg" alt="Owl Image"></a>	
-                           <a href="#" class="owl-item el el-4 active"><img src="img/bgc-icon/pixelheart_icon.svg" alt="Owl Image"></a>
-                           <a href="#" class="owl-item el el-5"><img src="img/bgc-icon/e-round_icon.svg" alt="Owl Image"></a>
-                           <a href="#" class="owl-item el el-6"><img src="img/bgc-icon/frame_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-1" data-class="bgc1"><img src="img/bgc-icon/cardheart_icon.svg" alt="Owl Image"></a>	
+                           <a href="#" class="owl-item el el-2" data-class="bgc2"><img src="img/bgc-icon/pinkround_icon.svg" alt="Owl Image"></a>								
+                           <a href="#" class="owl-item el el-3" data-class="bgc3"><img src="img/bgc-icon/greenround_icon.svg" alt="Owl Image"></a>	
+                           <a href="#" class="owl-item el el-4 active" data-class="bgc4"><img src="img/bgc-icon/pixelheart_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-5" data-class="bgc5"><img src="img/bgc-icon/e-round_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-6" data-class="bgc6"><img src="img/bgc-icon/frame_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-7" data-class="bgc7"><img src="img/bgc-icon/form1_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-8" data-class="bgc8"><img src="img/bgc-icon/form2_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-9" data-class="bgc9"><img src="img/bgc-icon/form3_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-10" data-class="bgc10"><img src="img/bgc-icon/form4_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-11" data-class="bgc11"><img src="img/bgc-icon/form5_icon.svg" alt="Owl Image"></a>
+                           <a href="#" class="owl-item el el-12" data-class="bgc12"><img src="img/bgc-icon/form6_icon.svg" alt="Owl Image"></a>
+
                         </div>
                      </div>
                      <div class="choose choose-2 hidden">
@@ -98,6 +73,20 @@
                            <a href="#" class="owl-item dec d-5" data-index="5"><img src="img/decor-icon/decor5_icon.png" alt="Owl Image"></a>
                            <a href="#" class="owl-item dec d-6" data-index="6"><img src="img/decor-icon/decor6_icon.png" alt="Owl Image"></a>
                            <a href="#" class="owl-item dec d-7" data-index="7"><img src="img/decor-icon/decor7_icon.png" alt="Owl Image"></a>
+
+                           <a href="#" class="owl-item dec d-8" data-index="8"><img src="img/decor-icon/decor8_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-9" data-index="9"><img src="img/decor-icon/decor9_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-10" data-index="10"><img src="img/decor-icon/decor10_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-11" data-index="11"><img src="img/decor-icon/decor11_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-12" data-index="12"><img src="img/decor-icon/decor12_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-13" data-index="13"><img src="img/decor-icon/decor13_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-14" data-index="14"><img src="img/decor-icon/decor14_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-15" data-index="15"><img src="img/decor-icon/decor15_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-16" data-index="16"><img src="img/decor-icon/decor16_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-17" data-index="17"><img src="img/decor-icon/decor17_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-18" data-index="18"><img src="img/decor-icon/decor18_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-19" data-index="19"><img src="img/decor-icon/decor19_icon.png" alt="Owl Image"></a>
+                           <a href="#" class="owl-item dec d-20" data-index="20"><img src="img/decor-icon/decor20_icon.png" alt="Owl Image"></a>
                         </div>
                      </div>
                      <div class="alert-drag hidden">Передвигайте украшения, зажав левую кнопку мыши. <br>Убрать украшение повторным кликом</div>
@@ -116,12 +105,6 @@
       </div>
       
 <?php include_once("rules.php"); ?>
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      <script src="js/jquery.ui.touch-punch.min.js"></script>
-      <script src="js/common.js"></script>
+<?php include_once("footer.php"); ?>
    </body>
 </html>

@@ -154,6 +154,7 @@ a.edit
 	opacity: 0.6
 
 .btn.btn-submit:disabled,
+.btn.btn-submit.disabled,
 .btn.btn-submit[disabled]
 	opacity: 0.6
 
@@ -642,15 +643,30 @@ a.logotype
 .bgc1
 	background-image: url(../img/bgc/cardheart.png)
 .bgc2
-	background-image: url(../img/bgc/e-round.png)
-.bgc3
-	background-image: url(../img/bgc/frame.png)
-.bgc4
-	background-image: url(../img/bgc/greenround.png)
-.bgc5
 	background-image: url(../img/bgc/pinkround.png)
-.bgc6
+.bgc3
+	background-image: url(../img/bgc/greenround.png)
+.bgc4
 	background-image: url(../img/bgc/pixelheart.png)
+.bgc5
+	background-image: url(../img/bgc/e-round.png)
+.bgc6
+	background-image: url(../img/bgc/frame.png)
+
+.bgc7
+	background-image: url(../img/bgc/form1.png)
+.bgc8
+	background-image: url(../img/bgc/form2.png)
+.bgc9
+	background-image: url(../img/bgc/form3.png)
+.bgc10
+	background-image: url(../img/bgc/form4.png)
+.bgc11
+	background-image: url(../img/bgc/form5.png)
+.bgc12
+	background-image: url(../img/bgc/form6.png)
+
+
 .decor-1
 	background-image: url(../img/decor/decor1_big.png)
 .decor-2
@@ -665,6 +681,32 @@ a.logotype
 	background-image: url(../img/decor/decor6_big.png)
 .decor-7
 	background-image: url(../img/decor/decor7_big.png)
+.decor-8
+	background-image: url(../img/decor/decor8_big.png)
+.decor-9
+	background-image: url(../img/decor/decor9_big.png)
+.decor-10
+	background-image: url(../img/decor/decor10_big.png)
+.decor-11
+	background-image: url(../img/decor/decor11_big.png)
+.decor-12
+	background-image: url(../img/decor/decor12_big.png)
+.decor-13
+	background-image: url(../img/decor/decor13_big.png)
+.decor-14
+	background-image: url(../img/decor/decor14_big.png)
+.decor-15
+	background-image: url(../img/decor/decor15_big.png)
+.decor-16
+	background-image: url(../img/decor/decor16_big.png)
+.decor-17
+	background-image: url(../img/decor/decor17_big.png)
+.decor-18
+	background-image: url(../img/decor/decor18_big.png)
+.decor-19
+	background-image: url(../img/decor/decor19_big.png)
+.decor-20
+	background-image: url(../img/decor/decor20_big.png)
 
 .slot-xxl
 	z-index: 6
@@ -882,6 +924,8 @@ a.logotype
 			line-height: 23px
 			font-size: 18px
 			padding: 22px 56px
+			display: block
+			margin: auto
 
 
 .choose-2
@@ -944,7 +988,7 @@ button.slick-prev.slick-arrow
 	position: relative
 	z-index: 99
 
-.etaps
+.etaps, .card-v.center
 	.decor
 		background-position: 50%
 	.decor-1
@@ -967,6 +1011,9 @@ button.slick-prev.slick-arrow
 		height: 82px
 	.decor-7
 		width: 115px
+		height: 150px
+	.decor-8, .decor-9, .decor-10, .decor-11, .decor-12, .decor-13, .decor-14, .decor-15, .decor-16, .decor-17, .decor-18, .decor-19, .decor-20
+		width: 150px
 		height: 150px
 	
 
@@ -974,27 +1021,6 @@ button.slick-prev.slick-arrow
 	.decor
 		background-position: 50%
 		transform: scale(1)
-	.decor-1
-		width: 185px
-		height: 200px
-	.decor-2
-		width: 144px
-		height: 150px
-	.decor-3
-		width: 172px
-		height: 200px
-	.decor-4
-		width: 161px
-		height: 200px
-	.decor-5
-		width: 88px
-		height: 150px
-	.decor-6
-		width: 206px
-		height: 82px
-	.decor-7
-		width: 115px
-		height: 150px
 
 .hidden
 	display: none
@@ -1010,7 +1036,7 @@ button.slick-prev.slick-arrow
 		.common
 			display: inline-block
 	.btn-wrapper
-		margin-top: 9px
+		margin-top: 49px
 
 .constructor .etaps .card-v.rotate-card
 	transform: rotate(-11deg) !important
@@ -1386,5 +1412,19 @@ button.slick-prev.slick-arrow
 
 .wrap-logo
 	text-align: right
+
+
+.input-mess
+	background-color: #ed74a9
+	font-size: 10px
+	display: none
+	top: 48px
+	padding: 2px 15px
+	border-radius: 6px
+	font-family: Rubik, sans-serif
+	color: #fff
+	max-width: 150px
+	margin: 15px auto 0
+
 
 @import "media" // Всегда в конце
