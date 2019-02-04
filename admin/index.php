@@ -38,7 +38,7 @@ catch (Exception $e)
         <tr style="display: table-cell; padding: 10px 15px; border: 1px solid black; border-top: 0">
             <td style="width: 40px;"><input type="text" name="row_id" value="<?=$letter['id'];?>" hidden/><?=$letter['id'];?></td>
             <td style="width: 190px;"><?=$letter['user_name'];?></td>
-            <td style="width: 360px;"><?=$letter_data->message;?></td>
+            <td style="width: 360px; word-break: break-word;"><?=$letter_data->message;?></td>
             <td style="width: 220px;"><?=$letter['user_phone'];?></td>
             <td style="width: 220px;"><?=$letter['user_email'];?></td>
             <td><button>Удалить</button></td>

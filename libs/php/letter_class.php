@@ -45,9 +45,9 @@ class Letter
 
     protected $dbconfig = array(
         'host'=>'localhost',
-        'user'=>'root',
-        'password'=>'',
-        'dbname'=>'postcard',
+        'user'=>'pechkine_let',
+        'password'=>'fg3tg42gjk',
+        'dbname'=>'pechkine_letters',
     );
     protected $db;
 

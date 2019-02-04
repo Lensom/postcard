@@ -6,7 +6,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
       <script src="js/jquery.ui.touch-punch.min.js"></script>
-<script src="/js/common.js?v=1.02"></script>
+<script src="/js/common.js?v=1.04"></script>
 <script>
    // Маска для телефона
    $(".phone").mask("+375 99 999-99-99");
