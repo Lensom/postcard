@@ -263,7 +263,7 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 		function(i){
 			var item = $(this)
 			var arr = item.attr('class').split(/\s+/);
-      arr.forEach(function(element, i, arr) {
+      arr.forEach(function(element, j, arr) {
         if(element.indexOf("decor-") == 0 ){
           setCookie("sticker" + i, element , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
           setCookie("stickerPosLeft" + i, item.css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");

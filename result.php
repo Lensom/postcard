@@ -15,9 +15,6 @@
                <div class="left-side">
                   <div class="card-v rotate-card" id="card">
                      <p class="text-card" id="text-card"></p>
-                     <!-- <div class="decor decor-1"></div> -->
-                     <div id="draggable3" style="left: 261px; top: 20px;" class="decor last-decor  draggable ui-widget-content decor-3 hidden">
-                     </div>
                      <span class="alert-drag hidden">Передвигайте украшения, зажав левую кнопку мыши</span>
                   </div>
                   <a href="constructor.php" class="common edit">Редактировать</a>
@@ -34,7 +31,11 @@
                         <div class="social-element vk"><img src="img/vk.svg" class="vk" alt="Поделиться в вконтакте">
                            <div class="vk-link">
                               <script type="text/javascript">
-                                 document.write(VK.Share.button({url: "http://loveletters.by", title: "Онлайн-гипермаркет e-dostavka.by", image: "http://loveletters.by/img/edostavka.jpg?v=1.01" },{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" position=\"absolute\" width=\"100%\" height=\"100%\" />"}));
+                                 try {
+                                    document.write(VK.Share.button({url: "http://loveletters.by", title: "Онлайн-гипермаркет e-dostavka.by", image: "http://loveletters.by/img/edostavka.jpg?v=1.01" },{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" position=\"absolute\" width=\"100%\" height=\"100%\" />"}));
+                                 } catch (error) {
+                                    console.log('vk is block')
+                                 }
                               </script>
                            </div>
                         </div>
