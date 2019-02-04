@@ -33,11 +33,11 @@
                         Следите за новостями на сайте <a href="https://e-dostavka.by/" class="common" target="_blank" rel="noopener noreferrer">e-dostavka.by</a> и в социальных сетях. 
                      </p>
                      <div class="social-network">                           
-                           <a href="https://www.facebook.com/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/facebook.svg" class="facebook" alt="">
+                           <a href="https://www.facebook.com/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/facebook.svg" class="facebook fb-i" alt="">
                            </a>
-                           <a href="https://vk.com/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/vk.svg" class="vk" alt="">
+                           <a href="https://vk.com/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/vk.svg" class="vk vk-i" alt="">
                            </a>
-                           <a href="https://ok.ru/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/odno.svg" class="odno" alt="">
+                           <a href="https://ok.ru/edostby" target="_blank" rel="noopener noreferrer" class="social-element"><img src="img/odno.svg" class="odno ok-i" alt="">
                            </a>   
                         </div>
                   </div>
