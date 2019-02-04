@@ -263,13 +263,13 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 		function(i){
 			var item = $(this)
 			var arr = item.attr('class').split(/\s+/);
-			arr.forEach(element => {
-				if(element.indexOf("decor-") == 0 ){
-					setCookie("sticker" + i, element , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
-					setCookie("stickerPosLeft" + i, item.css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
-					setCookie("stickerPosTop" + i, item.css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
-				}	
-			});			
+      arr.forEach(function(element, i, arr) {
+        if(element.indexOf("decor-") == 0 ){
+          setCookie("sticker" + i, element , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+          setCookie("stickerPosLeft" + i, item.css('left') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+          setCookie("stickerPosTop" + i, item.css('top') , "Mon, 18-Jan-2020 00:00:00 GMT", "/");
+        } 
+      });	
 		}
 	)
 	$.each(bgcList, function(index, item) {
@@ -285,7 +285,7 @@ while(name = two.pop()) setCookie(name.split('=')[0], '' , "Mon, 18-Jan-2020 00:
 		obj.posTop = top;
 		obj.posLeft = left;
 		var classSticker = $(this).attr('class').split(/\s+/);
-		classSticker.forEach(element => {
+    classSticker.forEach(function(element, i, arr) {
 			if(element.indexOf("decor-") == 0 ){
 				obj.sticker = element;	
 			}	
